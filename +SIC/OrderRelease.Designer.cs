@@ -35,6 +35,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.lblBrand = new System.Windows.Forms.Label();
             this.grbOrderRelease = new System.Windows.Forms.GroupBox();
+            this.cmbCurrency = new System.Windows.Forms.ComboBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.txtCustomerId = new System.Windows.Forms.TextBox();
@@ -55,7 +57,6 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.txtBrand = new System.Windows.Forms.TextBox();
             this.txtSpecification = new System.Windows.Forms.TextBox();
-            this.btnClear = new System.Windows.Forms.Button();
             this.grbOrderRelease.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,6 +96,7 @@
             this.btnCancel.TabIndex = 25;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -105,6 +107,7 @@
             this.btnSave.TabIndex = 22;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblBrand
             // 
@@ -118,6 +121,7 @@
             // 
             // grbOrderRelease
             // 
+            this.grbOrderRelease.Controls.Add(this.cmbCurrency);
             this.grbOrderRelease.Controls.Add(this.btnClear);
             this.grbOrderRelease.Controls.Add(this.txtCustomerName);
             this.grbOrderRelease.Controls.Add(this.lblCustomerName);
@@ -152,6 +156,29 @@
             this.grbOrderRelease.TabIndex = 30;
             this.grbOrderRelease.TabStop = false;
             this.grbOrderRelease.Text = "Order Release";
+            // 
+            // cmbCurrency
+            // 
+            this.cmbCurrency.FormattingEnabled = true;
+            this.cmbCurrency.Items.AddRange(new object[] {
+            "CAD$",
+            "US$",
+            "R$"});
+            this.cmbCurrency.Location = new System.Drawing.Point(317, 87);
+            this.cmbCurrency.Name = "cmbCurrency";
+            this.cmbCurrency.Size = new System.Drawing.Size(33, 23);
+            this.cmbCurrency.TabIndex = 50;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(210, 214);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(64, 30);
+            this.btnClear.TabIndex = 49;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtCustomerName
             // 
@@ -369,7 +396,7 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(317, 87);
+            this.txtPrice.Location = new System.Drawing.Point(356, 88);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(72, 21);
             this.txtPrice.TabIndex = 32;
@@ -398,16 +425,6 @@
             this.txtSpecification.Size = new System.Drawing.Size(130, 21);
             this.txtSpecification.TabIndex = 29;
             // 
-            // btnClear
-            // 
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(210, 214);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(64, 30);
-            this.btnClear.TabIndex = 49;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
             // OrderRelease
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,6 +435,7 @@
             this.Name = "OrderRelease";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderRelease";
+            this.Load += new System.EventHandler(this.OrderRelease_Load);
             this.grbOrderRelease.ResumeLayout(false);
             this.grbOrderRelease.PerformLayout();
             this.ResumeLayout(false);
@@ -453,5 +471,6 @@
         private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ComboBox cmbCurrency;
     }
 }

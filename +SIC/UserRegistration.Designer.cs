@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.grbRegisterUser = new System.Windows.Forms.GroupBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.rdbNO = new System.Windows.Forms.RadioButton();
+            this.rdbYES = new System.Windows.Forms.RadioButton();
+            this.lblAdm = new System.Windows.Forms.Label();
             this.txtJobTitle = new System.Windows.Forms.TextBox();
             this.lblJobTitle = new System.Windows.Forms.Label();
             this.txtEmployeeId = new System.Windows.Forms.TextBox();
@@ -38,22 +42,20 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txtRetypePass = new System.Windows.Forms.TextBox();
-            this.lblRetypePass = new System.Windows.Forms.Label();
+            this.txtRetypePassword = new System.Windows.Forms.TextBox();
+            this.lblRetypePassword = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.rdbNO = new System.Windows.Forms.RadioButton();
-            this.rdbYES = new System.Windows.Forms.RadioButton();
-            this.lblAdm = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.lblWrongPassword = new System.Windows.Forms.Label();
             this.grbRegisterUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbRegisterUser
             // 
+            this.grbRegisterUser.Controls.Add(this.lblWrongPassword);
             this.grbRegisterUser.Controls.Add(this.btnClear);
             this.grbRegisterUser.Controls.Add(this.rdbNO);
             this.grbRegisterUser.Controls.Add(this.rdbYES);
@@ -67,8 +69,8 @@
             this.grbRegisterUser.Controls.Add(this.lblFirstName);
             this.grbRegisterUser.Controls.Add(this.lblLastName);
             this.grbRegisterUser.Controls.Add(this.btnCancel);
-            this.grbRegisterUser.Controls.Add(this.txtRetypePass);
-            this.grbRegisterUser.Controls.Add(this.lblRetypePass);
+            this.grbRegisterUser.Controls.Add(this.txtRetypePassword);
+            this.grbRegisterUser.Controls.Add(this.lblRetypePassword);
             this.grbRegisterUser.Controls.Add(this.btnSave);
             this.grbRegisterUser.Controls.Add(this.txtEmail);
             this.grbRegisterUser.Controls.Add(this.txtPassword);
@@ -82,6 +84,50 @@
             this.grbRegisterUser.TabStop = false;
             this.grbRegisterUser.Text = "Register User";
             this.grbRegisterUser.Enter += new System.EventHandler(this.grbLogin_Enter);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(224, 195);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(64, 30);
+            this.btnClear.TabIndex = 30;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // rdbNO
+            // 
+            this.rdbNO.AutoSize = true;
+            this.rdbNO.Checked = true;
+            this.rdbNO.Location = new System.Drawing.Point(424, 140);
+            this.rdbNO.Name = "rdbNO";
+            this.rdbNO.Size = new System.Drawing.Size(45, 19);
+            this.rdbNO.TabIndex = 29;
+            this.rdbNO.TabStop = true;
+            this.rdbNO.Text = "NO";
+            this.rdbNO.UseVisualStyleBackColor = true;
+            this.rdbNO.CheckedChanged += new System.EventHandler(this.rdbNO_CheckedChanged);
+            // 
+            // rdbYES
+            // 
+            this.rdbYES.AutoSize = true;
+            this.rdbYES.Location = new System.Drawing.Point(367, 140);
+            this.rdbYES.Name = "rdbYES";
+            this.rdbYES.Size = new System.Drawing.Size(51, 19);
+            this.rdbYES.TabIndex = 28;
+            this.rdbYES.Text = "YES";
+            this.rdbYES.UseVisualStyleBackColor = true;
+            // 
+            // lblAdm
+            // 
+            this.lblAdm.AutoSize = true;
+            this.lblAdm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdm.Location = new System.Drawing.Point(320, 142);
+            this.lblAdm.Name = "lblAdm";
+            this.lblAdm.Size = new System.Drawing.Size(41, 16);
+            this.lblAdm.TabIndex = 27;
+            this.lblAdm.Text = "ADM";
             // 
             // txtJobTitle
             // 
@@ -104,7 +150,6 @@
             // 
             this.txtEmployeeId.Location = new System.Drawing.Point(367, 65);
             this.txtEmployeeId.Name = "txtEmployeeId";
-            this.txtEmployeeId.PasswordChar = '*';
             this.txtEmployeeId.Size = new System.Drawing.Size(80, 21);
             this.txtEmployeeId.TabIndex = 17;
             this.txtEmployeeId.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
@@ -131,7 +176,6 @@
             // 
             this.txtLastName.Location = new System.Drawing.Point(347, 31);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.PasswordChar = '*';
             this.txtLastName.Size = new System.Drawing.Size(154, 21);
             this.txtLastName.TabIndex = 15;
             // 
@@ -166,25 +210,25 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // txtRetypePass
+            // txtRetypePassword
             // 
-            this.txtRetypePass.Location = new System.Drawing.Point(148, 139);
-            this.txtRetypePass.Name = "txtRetypePass";
-            this.txtRetypePass.PasswordChar = '*';
-            this.txtRetypePass.Size = new System.Drawing.Size(154, 21);
-            this.txtRetypePass.TabIndex = 10;
-            this.txtRetypePass.TextChanged += new System.EventHandler(this.txtRetypePass_TextChanged);
+            this.txtRetypePassword.Location = new System.Drawing.Point(148, 139);
+            this.txtRetypePassword.Name = "txtRetypePassword";
+            this.txtRetypePassword.PasswordChar = '*';
+            this.txtRetypePassword.Size = new System.Drawing.Size(154, 21);
+            this.txtRetypePassword.TabIndex = 10;
+            this.txtRetypePassword.TextChanged += new System.EventHandler(this.txtRetypePass_TextChanged);
             // 
-            // lblRetypePass
+            // lblRetypePassword
             // 
-            this.lblRetypePass.AutoSize = true;
-            this.lblRetypePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRetypePass.Location = new System.Drawing.Point(12, 139);
-            this.lblRetypePass.Name = "lblRetypePass";
-            this.lblRetypePass.Size = new System.Drawing.Size(130, 16);
-            this.lblRetypePass.TabIndex = 9;
-            this.lblRetypePass.Text = "Retype Password";
-            this.lblRetypePass.Click += new System.EventHandler(this.lblRetypePass_Click);
+            this.lblRetypePassword.AutoSize = true;
+            this.lblRetypePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRetypePassword.Location = new System.Drawing.Point(12, 139);
+            this.lblRetypePassword.Name = "lblRetypePassword";
+            this.lblRetypePassword.Size = new System.Drawing.Size(130, 16);
+            this.lblRetypePassword.TabIndex = 9;
+            this.lblRetypePassword.Text = "Retype Password";
+            this.lblRetypePassword.Click += new System.EventHandler(this.lblRetypePass_Click);
             // 
             // btnSave
             // 
@@ -236,47 +280,17 @@
             this.lblPassword.Text = "Password";
             this.lblPassword.Click += new System.EventHandler(this.lblPassword_Click);
             // 
-            // rdbNO
+            // lblWrongPassword
             // 
-            this.rdbNO.AutoSize = true;
-            this.rdbNO.Location = new System.Drawing.Point(424, 140);
-            this.rdbNO.Name = "rdbNO";
-            this.rdbNO.Size = new System.Drawing.Size(45, 19);
-            this.rdbNO.TabIndex = 29;
-            this.rdbNO.TabStop = true;
-            this.rdbNO.Text = "NO";
-            this.rdbNO.UseVisualStyleBackColor = true;
-            // 
-            // rdbYES
-            // 
-            this.rdbYES.AutoSize = true;
-            this.rdbYES.Location = new System.Drawing.Point(367, 140);
-            this.rdbYES.Name = "rdbYES";
-            this.rdbYES.Size = new System.Drawing.Size(51, 19);
-            this.rdbYES.TabIndex = 28;
-            this.rdbYES.TabStop = true;
-            this.rdbYES.Text = "YES";
-            this.rdbYES.UseVisualStyleBackColor = true;
-            // 
-            // lblAdm
-            // 
-            this.lblAdm.AutoSize = true;
-            this.lblAdm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdm.Location = new System.Drawing.Point(320, 142);
-            this.lblAdm.Name = "lblAdm";
-            this.lblAdm.Size = new System.Drawing.Size(41, 16);
-            this.lblAdm.TabIndex = 27;
-            this.lblAdm.Text = "ADM";
-            // 
-            // btnClear
-            // 
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(224, 195);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(64, 30);
-            this.btnClear.TabIndex = 30;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.lblWrongPassword.AutoSize = true;
+            this.lblWrongPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWrongPassword.ForeColor = System.Drawing.Color.Red;
+            this.lblWrongPassword.Location = new System.Drawing.Point(145, 163);
+            this.lblWrongPassword.Name = "lblWrongPassword";
+            this.lblWrongPassword.Size = new System.Drawing.Size(148, 13);
+            this.lblWrongPassword.TabIndex = 31;
+            this.lblWrongPassword.Text = "Password doesn\'t match!";
+            this.lblWrongPassword.Visible = false;
             // 
             // UserRegistration
             // 
@@ -299,8 +313,8 @@
 
         private System.Windows.Forms.GroupBox grbRegisterUser;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txtRetypePass;
-        private System.Windows.Forms.Label lblRetypePass;
+        private System.Windows.Forms.TextBox txtRetypePassword;
+        private System.Windows.Forms.Label lblRetypePassword;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPassword;
@@ -318,5 +332,6 @@
         private System.Windows.Forms.RadioButton rdbYES;
         private System.Windows.Forms.Label lblAdm;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label lblWrongPassword;
     }
 }

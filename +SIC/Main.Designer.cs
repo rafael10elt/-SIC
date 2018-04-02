@@ -40,9 +40,9 @@
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.lblEmailUserLogonText = new System.Windows.Forms.Label();
+            this.lblEmailUserLogon = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,14 +71,16 @@
             // addNewOrderToolStripMenuItem
             // 
             this.addNewOrderToolStripMenuItem.Name = "addNewOrderToolStripMenuItem";
-            this.addNewOrderToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.addNewOrderToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.addNewOrderToolStripMenuItem.Text = "Add New Order";
+            this.addNewOrderToolStripMenuItem.Click += new System.EventHandler(this.addNewOrderToolStripMenuItem_Click);
             // 
             // manageOrderToolStripMenuItem
             // 
             this.manageOrderToolStripMenuItem.Name = "manageOrderToolStripMenuItem";
-            this.manageOrderToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.manageOrderToolStripMenuItem.Text = "Manage Order";
+            this.manageOrderToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.manageOrderToolStripMenuItem.Text = "Manager Orders";
+            this.manageOrderToolStripMenuItem.Click += new System.EventHandler(this.manageOrderToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
@@ -86,20 +88,21 @@
             this.viewReportsToolStripMenuItem,
             this.manageReportsToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.reportsToolStripMenuItem.Text = "Reports";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.reportsToolStripMenuItem.Text = "Customer";
             // 
             // viewReportsToolStripMenuItem
             // 
             this.viewReportsToolStripMenuItem.Name = "viewReportsToolStripMenuItem";
-            this.viewReportsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.viewReportsToolStripMenuItem.Text = "View Reports";
+            this.viewReportsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.viewReportsToolStripMenuItem.Text = "Add New Customer";
+            this.viewReportsToolStripMenuItem.Click += new System.EventHandler(this.viewReportsToolStripMenuItem_Click);
             // 
             // manageReportsToolStripMenuItem
             // 
             this.manageReportsToolStripMenuItem.Name = "manageReportsToolStripMenuItem";
-            this.manageReportsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.manageReportsToolStripMenuItem.Text = "Manage Reports";
+            this.manageReportsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.manageReportsToolStripMenuItem.Text = "Manager Customers";
             // 
             // usersToolStripMenuItem
             // 
@@ -113,14 +116,16 @@
             // addNewUserToolStripMenuItem
             // 
             this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.addNewUserToolStripMenuItem.Text = "Add new user";
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addNewUserToolStripMenuItem.Text = "Add New User";
+            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
             // 
             // manageUsersToolStripMenuItem
             // 
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
-            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.manageUsersToolStripMenuItem.Text = "Manage users";
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.manageUsersToolStripMenuItem.Text = "Manage Users";
+            this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -133,35 +138,36 @@
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem1.Text = "About";
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(12, 24);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(41, 15);
-            this.lblUser.TabIndex = 1;
-            this.lblUser.Text = "User:";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.ForeColor = System.Drawing.Color.Green;
-            this.lblUserName.Location = new System.Drawing.Point(50, 24);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(79, 15);
-            this.lblUserName.TabIndex = 2;
-            this.lblUserName.Text = "User Name";
+            this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(0, 48);
+            this.monthCalendar1.Location = new System.Drawing.Point(0, 80);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 3;
+            // 
+            // lblEmailUserLogonText
+            // 
+            this.lblEmailUserLogonText.AutoSize = true;
+            this.lblEmailUserLogonText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailUserLogonText.ForeColor = System.Drawing.Color.Green;
+            this.lblEmailUserLogonText.Location = new System.Drawing.Point(50, 24);
+            this.lblEmailUserLogonText.Name = "lblEmailUserLogonText";
+            this.lblEmailUserLogonText.Size = new System.Drawing.Size(78, 15);
+            this.lblEmailUserLogonText.TabIndex = 5;
+            this.lblEmailUserLogonText.Text = "User Email";
+            // 
+            // lblEmailUserLogon
+            // 
+            this.lblEmailUserLogon.AutoSize = true;
+            this.lblEmailUserLogon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailUserLogon.Location = new System.Drawing.Point(12, 24);
+            this.lblEmailUserLogon.Name = "lblEmailUserLogon";
+            this.lblEmailUserLogon.Size = new System.Drawing.Size(41, 15);
+            this.lblEmailUserLogon.TabIndex = 4;
+            this.lblEmailUserLogon.Text = "User:";
             // 
             // Main
             // 
@@ -169,9 +175,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(801, 532);
+            this.Controls.Add(this.lblEmailUserLogonText);
+            this.Controls.Add(this.lblEmailUserLogon);
             this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.lblUserName);
-            this.Controls.Add(this.lblUser);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -200,9 +206,9 @@
         private System.Windows.Forms.ToolStripMenuItem addNewUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
+        private System.Windows.Forms.Label lblEmailUserLogonText;
+        private System.Windows.Forms.Label lblEmailUserLogon;
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grbRegisterCustomer = new System.Windows.Forms.GroupBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.txtPostalCode = new System.Windows.Forms.TextBox();
             this.lblPostalCode = new System.Windows.Forms.Label();
             this.cmbProvince = new System.Windows.Forms.ComboBox();
@@ -47,7 +48,6 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
             this.grbRegisterCustomer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,6 +79,17 @@
             this.grbRegisterCustomer.TabIndex = 11;
             this.grbRegisterCustomer.TabStop = false;
             this.grbRegisterCustomer.Text = "Register Customer";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(199, 195);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(64, 30);
+            this.btnClear.TabIndex = 50;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtPostalCode
             // 
@@ -173,6 +184,7 @@
             this.lblCompanyName.Size = new System.Drawing.Size(118, 16);
             this.lblCompanyName.TabIndex = 12;
             this.lblCompanyName.Text = "Company Name";
+            this.lblCompanyName.Click += new System.EventHandler(this.lblCompanyName_Click);
             // 
             // lblBIN
             // 
@@ -193,6 +205,7 @@
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtCity
             // 
@@ -221,6 +234,7 @@
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtEmail
             // 
@@ -257,16 +271,6 @@
             this.lblAddress.TabIndex = 3;
             this.lblAddress.Text = "Address";
             // 
-            // btnClear
-            // 
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(199, 195);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(64, 30);
-            this.btnClear.TabIndex = 50;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
             // CustomerRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,6 +281,7 @@
             this.Name = "CustomerRegistration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerRegistration";
+            this.Load += new System.EventHandler(this.CustomerRegistration_Load);
             this.grbRegisterCustomer.ResumeLayout(false);
             this.grbRegisterCustomer.PerformLayout();
             this.ResumeLayout(false);

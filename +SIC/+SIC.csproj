@@ -32,8 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer.cs">
+      <DependentUpon>SICEntityModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="CustomerRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +75,12 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerCustomers.Designer.cs">
+      <DependentUpon>ManagerCustomers.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerOrders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +93,9 @@
     <Compile Include="ManagerUsers.Designer.cs">
       <DependentUpon>ManagerUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>SICEntityModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="OrderRelease.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +104,49 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SICDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SICDb.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SICDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SICDbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SICDbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SICDbDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SICDbDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SICDbDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SICEntityModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SICEntityModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SICEntityModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SICEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SICEntityModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SICEntityModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>SICEntityModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="UserRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +162,9 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerCustomers.resx">
+      <DependentUpon>ManagerCustomers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerOrders.resx">
       <DependentUpon>ManagerOrders.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,10 +177,12 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UserRegistration.resx">
       <DependentUpon>UserRegistration.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -123,21 +192,83 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SICDb.xsc">
+      <DependentUpon>SICDb.xsd</DependentUpon>
+    </None>
+    <None Include="SICDb.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SICDb.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SICDb.xss">
+      <DependentUpon>SICDb.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="SICEntityModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SICEntityModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SICDbDataSet.xsc">
+      <DependentUpon>SICDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SICDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SICDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SICDbDataSet.xss">
+      <DependentUpon>SICDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SICDbDataSet1.xsc">
+      <DependentUpon>SICDbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SICDbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SICDbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SICDbDataSet1.xss">
+      <DependentUpon>SICDbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SICDbDataSet2.xsc">
+      <DependentUpon>SICDbDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SICDbDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SICDbDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SICDbDataSet2.xss">
+      <DependentUpon>SICDbDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SICEntityModel.edmx.diagram">
+      <DependentUpon>SICEntityModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\Warehouse.jpg" />
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Warehouse1.jpg" />
+    <None Include="Resources\SIC Screen.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="SICEntityModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SICEntityModel.edmx</DependentUpon>
+      <LastGenOutput>SICEntityModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SICEntityModel.edmx.sql" />
+    <Content Include="SICEntityModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SICEntityModel.edmx</DependentUpon>
+      <LastGenOutput>SICEntityModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Warehouse2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\warehouse3.jpg" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
