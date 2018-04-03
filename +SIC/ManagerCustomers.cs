@@ -33,6 +33,7 @@ namespace _SIC
             txtPhone.Text = cust.Phone;
             txtPostalCode.Text = cust.PostalCode;
             cmbProvince.Text = cust.Province;
+            txtCustomerId.Text = cust.CustomerId.ToString();
         }
 
         public ManagerCustomers()
@@ -119,9 +120,21 @@ namespace _SIC
             cust.Phone = txtPhone.Text;
             cust.Province = cmbProvince.Text;
 
-            context.SaveChanges();
+            var m = MessageBox.Show("Are you sure?", "Update", MessageBoxButtons.YesNo);
+            if (m.ToString() == "Yes")
+            {
+                context.SaveChanges();
+                readCustomer();
+            }
+            else
+            {
+                readCustomer();
+            }            
+        }
 
-            readCustomer();
+        private void dgvCustomerList_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

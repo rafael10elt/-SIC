@@ -93,17 +93,16 @@
             // 
             // txtPostalCode
             // 
-            this.txtPostalCode.Location = new System.Drawing.Point(248, 136);
+            this.txtPostalCode.Location = new System.Drawing.Point(343, 133);
             this.txtPostalCode.Name = "txtPostalCode";
-            this.txtPostalCode.PasswordChar = '*';
-            this.txtPostalCode.Size = new System.Drawing.Size(154, 21);
+            this.txtPostalCode.Size = new System.Drawing.Size(122, 21);
             this.txtPostalCode.TabIndex = 45;
             // 
             // lblPostalCode
             // 
             this.lblPostalCode.AutoSize = true;
             this.lblPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostalCode.Location = new System.Drawing.Point(149, 137);
+            this.lblPostalCode.Location = new System.Drawing.Point(244, 138);
             this.lblPostalCode.Name = "lblPostalCode";
             this.lblPostalCode.Size = new System.Drawing.Size(93, 16);
             this.lblPostalCode.TabIndex = 44;
@@ -117,7 +116,6 @@
             "Alberta",
             "British Columbia",
             "Manitoba",
-            "",
             "New Brunswick",
             "Newfoundland and Labrador",
             "Northwest Territories",
@@ -130,7 +128,7 @@
             "Yukon"});
             this.cmbProvince.Location = new System.Drawing.Point(84, 134);
             this.cmbProvince.Name = "cmbProvince";
-            this.cmbProvince.Size = new System.Drawing.Size(59, 23);
+            this.cmbProvince.Size = new System.Drawing.Size(154, 23);
             this.cmbProvince.TabIndex = 43;
             // 
             // txtPhone
@@ -171,7 +169,6 @@
             // 
             this.txtBIN.Location = new System.Drawing.Point(338, 31);
             this.txtBIN.Name = "txtBIN";
-            this.txtBIN.PasswordChar = '*';
             this.txtBIN.Size = new System.Drawing.Size(128, 21);
             this.txtBIN.TabIndex = 15;
             // 
@@ -211,7 +208,6 @@
             // 
             this.txtCity.Location = new System.Drawing.Point(286, 101);
             this.txtCity.Name = "txtCity";
-            this.txtCity.PasswordChar = '*';
             this.txtCity.Size = new System.Drawing.Size(154, 21);
             this.txtCity.TabIndex = 10;
             // 
@@ -247,7 +243,6 @@
             // 
             this.txtAddress.Location = new System.Drawing.Point(84, 101);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.PasswordChar = '*';
             this.txtAddress.Size = new System.Drawing.Size(154, 21);
             this.txtAddress.TabIndex = 6;
             // 

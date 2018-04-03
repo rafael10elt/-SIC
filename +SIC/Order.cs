@@ -26,5 +26,8 @@ namespace _SIC
         public string Quantity { get; set; }
         public string Currency { get; set; }
         public string Price { get; set; }
+        public int CustomerCustomerId { get; set; }
+    
+        public virtual Customer Customer { get; set; }
     }
 }

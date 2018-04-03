@@ -14,6 +14,12 @@ namespace _SIC
     
     public partial class Customer
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Customer()
+        {
+            this.Orders = new HashSet<Order>();
+        }
+    
         public int CustomerId { get; set; }
         public string CompanyName { get; set; }
         public string BIN { get; set; }
@@ -23,5 +29,8 @@ namespace _SIC
         public string City { get; set; }
         public string Province { get; set; }
         public string PostalCode { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

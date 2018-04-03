@@ -43,7 +43,12 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.lblEmailUserLogonText = new System.Windows.Forms.Label();
             this.lblEmailUserLogon = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.linklblLogout = new System.Windows.Forms.LinkLabel();
+            this.grbUserInfo = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
+            this.grbUserInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -103,6 +108,7 @@
             this.manageReportsToolStripMenuItem.Name = "manageReportsToolStripMenuItem";
             this.manageReportsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.manageReportsToolStripMenuItem.Text = "Manager Customers";
+            this.manageReportsToolStripMenuItem.Click += new System.EventHandler(this.manageReportsToolStripMenuItem_Click);
             // 
             // usersToolStripMenuItem
             // 
@@ -116,14 +122,14 @@
             // addNewUserToolStripMenuItem
             // 
             this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.addNewUserToolStripMenuItem.Text = "Add New User";
             this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
             // 
             // manageUsersToolStripMenuItem
             // 
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
-            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.manageUsersToolStripMenuItem.Text = "Manage Users";
             this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
@@ -138,22 +144,23 @@
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(0, 80);
+            this.monthCalendar1.Location = new System.Drawing.Point(0, 82);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 3;
             // 
             // lblEmailUserLogonText
             // 
             this.lblEmailUserLogonText.AutoSize = true;
+            this.lblEmailUserLogonText.BackColor = System.Drawing.Color.Transparent;
             this.lblEmailUserLogonText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmailUserLogonText.ForeColor = System.Drawing.Color.Green;
-            this.lblEmailUserLogonText.Location = new System.Drawing.Point(50, 24);
+            this.lblEmailUserLogonText.Location = new System.Drawing.Point(53, 16);
             this.lblEmailUserLogonText.Name = "lblEmailUserLogonText";
             this.lblEmailUserLogonText.Size = new System.Drawing.Size(78, 15);
             this.lblEmailUserLogonText.TabIndex = 5;
@@ -162,23 +169,71 @@
             // lblEmailUserLogon
             // 
             this.lblEmailUserLogon.AutoSize = true;
+            this.lblEmailUserLogon.BackColor = System.Drawing.Color.Transparent;
             this.lblEmailUserLogon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailUserLogon.Location = new System.Drawing.Point(12, 24);
+            this.lblEmailUserLogon.Location = new System.Drawing.Point(6, 16);
             this.lblEmailUserLogon.Name = "lblEmailUserLogon";
-            this.lblEmailUserLogon.Size = new System.Drawing.Size(41, 15);
+            this.lblEmailUserLogon.Size = new System.Drawing.Size(48, 15);
             this.lblEmailUserLogon.TabIndex = 4;
-            this.lblEmailUserLogon.Text = "User:";
+            this.lblEmailUserLogon.Text = "Email:";
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(82, 132);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(0, 13);
+            this.lbl1.TabIndex = 6;
+            this.lbl1.Visible = false;
+            // 
+            // lbl2
+            // 
+            this.lbl2.AutoSize = true;
+            this.lbl2.Location = new System.Drawing.Point(151, 172);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(0, 13);
+            this.lbl2.TabIndex = 7;
+            this.lbl2.Visible = false;
+            // 
+            // linklblLogout
+            // 
+            this.linklblLogout.ActiveLinkColor = System.Drawing.Color.Blue;
+            this.linklblLogout.AutoSize = true;
+            this.linklblLogout.BackColor = System.Drawing.Color.Transparent;
+            this.linklblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linklblLogout.Location = new System.Drawing.Point(6, 33);
+            this.linklblLogout.Name = "linklblLogout";
+            this.linklblLogout.Size = new System.Drawing.Size(46, 13);
+            this.linklblLogout.TabIndex = 8;
+            this.linklblLogout.TabStop = true;
+            this.linklblLogout.Text = "Logout";
+            this.linklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLogout_LinkClicked);
+            // 
+            // grbUserInfo
+            // 
+            this.grbUserInfo.Controls.Add(this.lblEmailUserLogon);
+            this.grbUserInfo.Controls.Add(this.linklblLogout);
+            this.grbUserInfo.Controls.Add(this.lblEmailUserLogonText);
+            this.grbUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbUserInfo.Location = new System.Drawing.Point(0, 26);
+            this.grbUserInfo.Name = "grbUserInfo";
+            this.grbUserInfo.Size = new System.Drawing.Size(227, 56);
+            this.grbUserInfo.TabIndex = 9;
+            this.grbUserInfo.TabStop = false;
+            this.grbUserInfo.Text = "User Info";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::_SIC.Properties.Resources.SIC_Screen1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(801, 532);
-            this.Controls.Add(this.lblEmailUserLogonText);
-            this.Controls.Add(this.lblEmailUserLogon);
+            this.Controls.Add(this.grbUserInfo);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.lbl1);
+            this.Controls.Add(this.lbl2);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Main";
@@ -188,6 +243,8 @@
             this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.grbUserInfo.ResumeLayout(false);
+            this.grbUserInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +267,9 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
         private System.Windows.Forms.Label lblEmailUserLogonText;
         private System.Windows.Forms.Label lblEmailUserLogon;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.LinkLabel linklblLogout;
+        private System.Windows.Forms.GroupBox grbUserInfo;
     }
 }

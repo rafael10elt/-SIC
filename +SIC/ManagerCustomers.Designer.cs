@@ -103,6 +103,7 @@
             this.dgvCustomerList.Name = "dgvCustomerList";
             this.dgvCustomerList.Size = new System.Drawing.Size(714, 191);
             this.dgvCustomerList.TabIndex = 20;
+            this.dgvCustomerList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerList_CellContentClick_2);
             this.dgvCustomerList.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerList_CellContentClick_1);
             // 
             // customerIdDataGridViewTextBoxColumn
@@ -172,7 +173,7 @@
             // 
             // txtPostalCode
             // 
-            this.txtPostalCode.Location = new System.Drawing.Point(248, 136);
+            this.txtPostalCode.Location = new System.Drawing.Point(312, 136);
             this.txtPostalCode.Name = "txtPostalCode";
             this.txtPostalCode.Size = new System.Drawing.Size(154, 21);
             this.txtPostalCode.TabIndex = 45;
@@ -181,7 +182,7 @@
             // 
             this.lblPostalCode.AutoSize = true;
             this.lblPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostalCode.Location = new System.Drawing.Point(149, 137);
+            this.lblPostalCode.Location = new System.Drawing.Point(213, 137);
             this.lblPostalCode.Name = "lblPostalCode";
             this.lblPostalCode.Size = new System.Drawing.Size(93, 16);
             this.lblPostalCode.TabIndex = 44;
@@ -195,7 +196,6 @@
             "Alberta",
             "British Columbia",
             "Manitoba",
-            "",
             "New Brunswick",
             "Newfoundland and Labrador",
             "Northwest Territories",
@@ -208,7 +208,7 @@
             "Yukon"});
             this.cmbProvince.Location = new System.Drawing.Point(84, 134);
             this.cmbProvince.Name = "cmbProvince";
-            this.cmbProvince.Size = new System.Drawing.Size(59, 23);
+            this.cmbProvince.Size = new System.Drawing.Size(123, 23);
             this.cmbProvince.TabIndex = 43;
             // 
             // txtPhone

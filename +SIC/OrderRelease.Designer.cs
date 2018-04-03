@@ -35,6 +35,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.lblBrand = new System.Windows.Forms.Label();
             this.grbOrderRelease = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.cmbCurrency = new System.Windows.Forms.ComboBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
@@ -90,7 +91,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(293, 214);
+            this.btnCancel.Location = new System.Drawing.Point(291, 229);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(64, 30);
             this.btnCancel.TabIndex = 25;
@@ -101,7 +102,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(126, 214);
+            this.btnSave.Location = new System.Drawing.Point(124, 229);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(66, 30);
             this.btnSave.TabIndex = 22;
@@ -121,6 +122,7 @@
             // 
             // grbOrderRelease
             // 
+            this.grbOrderRelease.Controls.Add(this.btnSearch);
             this.grbOrderRelease.Controls.Add(this.cmbCurrency);
             this.grbOrderRelease.Controls.Add(this.btnClear);
             this.grbOrderRelease.Controls.Add(this.txtCustomerName);
@@ -149,13 +151,25 @@
             this.grbOrderRelease.Controls.Add(this.lblSpecification);
             this.grbOrderRelease.Controls.Add(this.lblBrand);
             this.grbOrderRelease.Controls.Add(this.txtProductName);
+            this.grbOrderRelease.Cursor = System.Windows.Forms.Cursors.Hand;
             this.grbOrderRelease.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbOrderRelease.Location = new System.Drawing.Point(12, 12);
             this.grbOrderRelease.Name = "grbOrderRelease";
-            this.grbOrderRelease.Size = new System.Drawing.Size(489, 265);
+            this.grbOrderRelease.Size = new System.Drawing.Size(489, 288);
             this.grbOrderRelease.TabIndex = 30;
             this.grbOrderRelease.TabStop = false;
             this.grbOrderRelease.Text = "Order Release";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::_SIC.Properties.Resources.ic_search;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Location = new System.Drawing.Point(168, 29);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(22, 22);
+            this.btnSearch.TabIndex = 51;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cmbCurrency
             // 
@@ -166,13 +180,13 @@
             "R$"});
             this.cmbCurrency.Location = new System.Drawing.Point(317, 87);
             this.cmbCurrency.Name = "cmbCurrency";
-            this.cmbCurrency.Size = new System.Drawing.Size(33, 23);
+            this.cmbCurrency.Size = new System.Drawing.Size(61, 23);
             this.cmbCurrency.TabIndex = 50;
             // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(210, 214);
+            this.btnClear.Location = new System.Drawing.Point(208, 229);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(64, 30);
             this.btnClear.TabIndex = 49;
@@ -203,7 +217,7 @@
             this.txtCustomerId.Location = new System.Drawing.Point(126, 29);
             this.txtCustomerId.Name = "txtCustomerId";
             this.txtCustomerId.ReadOnly = true;
-            this.txtCustomerId.Size = new System.Drawing.Size(59, 21);
+            this.txtCustomerId.Size = new System.Drawing.Size(39, 21);
             this.txtCustomerId.TabIndex = 46;
             this.txtCustomerId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -241,7 +255,7 @@
             "18",
             "19",
             "20"});
-            this.cmbShelf.Location = new System.Drawing.Point(246, 154);
+            this.cmbShelf.Location = new System.Drawing.Point(70, 151);
             this.cmbShelf.Name = "cmbShelf";
             this.cmbShelf.Size = new System.Drawing.Size(59, 23);
             this.cmbShelf.TabIndex = 44;
@@ -250,7 +264,7 @@
             // 
             this.lblShelf.AutoSize = true;
             this.lblShelf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShelf.Location = new System.Drawing.Point(191, 154);
+            this.lblShelf.Location = new System.Drawing.Point(15, 151);
             this.lblShelf.Name = "lblShelf";
             this.lblShelf.Size = new System.Drawing.Size(43, 16);
             this.lblShelf.TabIndex = 43;
@@ -269,16 +283,16 @@
             "High Value",
             "Personal",
             "Others  "});
-            this.cmbProductType.Location = new System.Drawing.Point(126, 153);
+            this.cmbProductType.Location = new System.Drawing.Point(126, 185);
             this.cmbProductType.Name = "cmbProductType";
-            this.cmbProductType.Size = new System.Drawing.Size(59, 23);
+            this.cmbProductType.Size = new System.Drawing.Size(179, 23);
             this.cmbProductType.TabIndex = 42;
             // 
             // lblProductType
             // 
             this.lblProductType.AutoSize = true;
             this.lblProductType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductType.Location = new System.Drawing.Point(15, 154);
+            this.lblProductType.Location = new System.Drawing.Point(15, 186);
             this.lblProductType.Name = "lblProductType";
             this.lblProductType.Size = new System.Drawing.Size(101, 16);
             this.lblProductType.TabIndex = 41;
@@ -379,7 +393,7 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(384, 154);
+            this.txtQuantity.Location = new System.Drawing.Point(208, 151);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(64, 21);
             this.txtQuantity.TabIndex = 34;
@@ -388,7 +402,7 @@
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(314, 158);
+            this.lblQuantity.Location = new System.Drawing.Point(138, 155);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(64, 16);
             this.lblQuantity.TabIndex = 33;
@@ -396,7 +410,7 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(356, 88);
+            this.txtPrice.Location = new System.Drawing.Point(399, 87);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(72, 21);
             this.txtPrice.TabIndex = 32;
@@ -430,7 +444,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(514, 293);
+            this.ClientSize = new System.Drawing.Size(514, 312);
             this.Controls.Add(this.grbOrderRelease);
             this.Name = "OrderRelease";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -472,5 +486,6 @@
         private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ComboBox cmbCurrency;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

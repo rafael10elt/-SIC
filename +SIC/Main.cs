@@ -13,25 +13,29 @@ namespace _SIC
 {
     public partial class Main : Form
     {
-        public Main()
+        public Main(string email)
         {
             InitializeComponent();
+            lblEmailUserLogonText.Text = email;
         }
-
-        private void Main_Load(object sender, EventArgs e)
+          
+        public void Main_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void addNewOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form OrderRelease = new OrderRelease();
+            string x1 = lbl1.Text;
+            string x2 = lbl2.Text;
+            Form OrderRelease = new OrderRelease(x1, x2);
             OrderRelease.Show();
         }
 
         private void viewReportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form NewCustomer = new CustomerRegistration();
+            NewCustomer.Show();
         }
 
         private void manageOrderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,31 +46,65 @@ namespace _SIC
 
         private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // SICDbEntities context = new SICDbEntities();
-           // String Email = lblEmailUserLogonText.Text;
-           //// User user = context.Users.First(u => u.UserId == Email);
-           // var m = MessageBox.Show("Are you sure?", "Delete", MessageBoxButtons.YesNo);
-           // if (user.ADM == "Yes")
-           // {
-           //     Form NewUser = new UserRegistration();
-           //     NewUser.Show();
-           // }
-           // else
-           // {
-           //     MessageBox.Show("You are not an Adminstrator!", "Warning", MessageBoxButtons.OK);
-           // }
-                        
+            SICDbEntities context = new SICDbEntities();
+            String Email = lblEmailUserLogonText.Text;
+            User user = context.Users.First(u => u.Email == Email);
+            //var m = MessageBox.Show("Are you sure?", "Delete", MessageBoxButtons.YesNo);
+            if (user.ADM == "YES")
+            {
+                Form NewUser = new UserRegistration();
+                NewUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("You are not an Adminstrator!", "Warning", MessageBoxButtons.OK);
+            }
+
         }
 
         private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form ManagerUser = new ManagerUsers();
-            ManagerUser.Show();
+            SICDbEntities context = new SICDbEntities();
+            String Email = lblEmailUserLogonText.Text;
+            User user = context.Users.First(u => u.Email == Email);
+            //var m = MessageBox.Show("Are you sure?", "Delete", MessageBoxButtons.YesNo);
+            if (user.ADM == "YES")
+            {
+                Form ManagerUser = new ManagerUsers();
+                ManagerUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("You are not an Adminstrator!", "Warning", MessageBoxButtons.OK);
+            }
+
+            
         }
 
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Sorry, it is not done yet!", "About", MessageBoxButtons.OK);
+        }
+
+        private void manageReportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form ManagerCustomer = new ManagerCustomers();
+            ManagerCustomer.Show();
+        }
+
+        private void linklblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var m = MessageBox.Show("Do you really want to Logout?", "Confirm Action", MessageBoxButtons.YesNo);
+            if (m.ToString() == "Yes")
+            {
+                Form.ActiveForm.Close();
+
+            }
+            else
+            {
+                //readOrders();
+            }
+            
         }
     }
 }

@@ -31,18 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.grbOrdersList = new System.Windows.Forms.GroupBox();
             this.dgvOrdersList = new System.Windows.Forms.DataGridView();
-            this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specificationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.warehouseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aisleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shelfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sICDbDataSet1 = new _SIC.SICDbDataSet1();
             this.cmbShelf = new System.Windows.Forms.ComboBox();
@@ -57,6 +45,7 @@
             this.lblQuantity = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.grbOrderRelease = new System.Windows.Forms.GroupBox();
+            this.cmbCurrency = new System.Windows.Forms.ComboBox();
             this.txtOrderId = new System.Windows.Forms.TextBox();
             this.lblOrderId = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -77,12 +66,29 @@
             this.lblBrand = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.ordersTableAdapter = new _SIC.SICDbDataSet1TableAdapters.OrdersTableAdapter();
-            this.cmbCurrency = new System.Windows.Forms.ComboBox();
+            this.sICDbDataSet6 = new _SIC.SICDbDataSet6();
+            this.ordersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ordersTableAdapter1 = new _SIC.SICDbDataSet6TableAdapters.OrdersTableAdapter();
+            this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specificationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.warehouseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aisleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shelfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerCustomerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbOrdersList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdersList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sICDbDataSet1)).BeginInit();
             this.grbOrderRelease.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sICDbDataSet6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbOrdersList
@@ -95,6 +101,7 @@
             this.grbOrdersList.TabIndex = 22;
             this.grbOrdersList.TabStop = false;
             this.grbOrdersList.Text = "Orders List";
+            this.grbOrdersList.Enter += new System.EventHandler(this.grbOrdersList_Enter);
             // 
             // dgvOrdersList
             // 
@@ -112,86 +119,14 @@
             this.shelfDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn,
             this.currencyDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn});
-            this.dgvOrdersList.DataSource = this.ordersBindingSource;
+            this.priceDataGridViewTextBoxColumn,
+            this.customerCustomerIdDataGridViewTextBoxColumn});
+            this.dgvOrdersList.DataSource = this.ordersBindingSource1;
             this.dgvOrdersList.Location = new System.Drawing.Point(6, 19);
             this.dgvOrdersList.Name = "dgvOrdersList";
             this.dgvOrdersList.Size = new System.Drawing.Size(714, 191);
             this.dgvOrdersList.TabIndex = 20;
-            this.dgvOrdersList.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrdersList_CellContentClick_1);
-            // 
-            // orderIdDataGridViewTextBoxColumn
-            // 
-            this.orderIdDataGridViewTextBoxColumn.DataPropertyName = "OrderId";
-            this.orderIdDataGridViewTextBoxColumn.HeaderText = "OrderId";
-            this.orderIdDataGridViewTextBoxColumn.Name = "orderIdDataGridViewTextBoxColumn";
-            this.orderIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            // 
-            // brandDataGridViewTextBoxColumn
-            // 
-            this.brandDataGridViewTextBoxColumn.DataPropertyName = "Brand";
-            this.brandDataGridViewTextBoxColumn.HeaderText = "Brand";
-            this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
-            // 
-            // specificationDataGridViewTextBoxColumn
-            // 
-            this.specificationDataGridViewTextBoxColumn.DataPropertyName = "Specification";
-            this.specificationDataGridViewTextBoxColumn.HeaderText = "Specification";
-            this.specificationDataGridViewTextBoxColumn.Name = "specificationDataGridViewTextBoxColumn";
-            // 
-            // warehouseDataGridViewTextBoxColumn
-            // 
-            this.warehouseDataGridViewTextBoxColumn.DataPropertyName = "Warehouse";
-            this.warehouseDataGridViewTextBoxColumn.HeaderText = "Warehouse";
-            this.warehouseDataGridViewTextBoxColumn.Name = "warehouseDataGridViewTextBoxColumn";
-            // 
-            // roomDataGridViewTextBoxColumn
-            // 
-            this.roomDataGridViewTextBoxColumn.DataPropertyName = "Room";
-            this.roomDataGridViewTextBoxColumn.HeaderText = "Room";
-            this.roomDataGridViewTextBoxColumn.Name = "roomDataGridViewTextBoxColumn";
-            // 
-            // aisleDataGridViewTextBoxColumn
-            // 
-            this.aisleDataGridViewTextBoxColumn.DataPropertyName = "Aisle";
-            this.aisleDataGridViewTextBoxColumn.HeaderText = "Aisle";
-            this.aisleDataGridViewTextBoxColumn.Name = "aisleDataGridViewTextBoxColumn";
-            // 
-            // productTypeDataGridViewTextBoxColumn
-            // 
-            this.productTypeDataGridViewTextBoxColumn.DataPropertyName = "ProductType";
-            this.productTypeDataGridViewTextBoxColumn.HeaderText = "ProductType";
-            this.productTypeDataGridViewTextBoxColumn.Name = "productTypeDataGridViewTextBoxColumn";
-            // 
-            // shelfDataGridViewTextBoxColumn
-            // 
-            this.shelfDataGridViewTextBoxColumn.DataPropertyName = "Shelf";
-            this.shelfDataGridViewTextBoxColumn.HeaderText = "Shelf";
-            this.shelfDataGridViewTextBoxColumn.Name = "shelfDataGridViewTextBoxColumn";
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // currencyDataGridViewTextBoxColumn
-            // 
-            this.currencyDataGridViewTextBoxColumn.DataPropertyName = "Currency";
-            this.currencyDataGridViewTextBoxColumn.HeaderText = "Currency";
-            this.currencyDataGridViewTextBoxColumn.Name = "currencyDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.dgvOrdersList.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrdersList_CellContentClick);
             // 
             // ordersBindingSource
             // 
@@ -227,9 +162,9 @@
             "18",
             "19",
             "20"});
-            this.cmbShelf.Location = new System.Drawing.Point(246, 154);
+            this.cmbShelf.Location = new System.Drawing.Point(330, 149);
             this.cmbShelf.Name = "cmbShelf";
-            this.cmbShelf.Size = new System.Drawing.Size(59, 23);
+            this.cmbShelf.Size = new System.Drawing.Size(48, 23);
             this.cmbShelf.TabIndex = 44;
             // 
             // cmbProductType
@@ -247,7 +182,7 @@
             "Others  "});
             this.cmbProductType.Location = new System.Drawing.Point(126, 153);
             this.cmbProductType.Name = "cmbProductType";
-            this.cmbProductType.Size = new System.Drawing.Size(59, 23);
+            this.cmbProductType.Size = new System.Drawing.Size(149, 23);
             this.cmbProductType.TabIndex = 42;
             // 
             // lblProductType
@@ -345,16 +280,16 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(384, 154);
+            this.txtQuantity.Location = new System.Drawing.Point(454, 149);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(64, 21);
+            this.txtQuantity.Size = new System.Drawing.Size(34, 21);
             this.txtQuantity.TabIndex = 34;
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(314, 158);
+            this.lblQuantity.Location = new System.Drawing.Point(384, 153);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(64, 16);
             this.lblQuantity.TabIndex = 33;
@@ -412,6 +347,18 @@
             this.grbOrderRelease.TabStop = false;
             this.grbOrderRelease.Text = "Order Release";
             // 
+            // cmbCurrency
+            // 
+            this.cmbCurrency.FormattingEnabled = true;
+            this.cmbCurrency.Items.AddRange(new object[] {
+            "CAD$",
+            "US$",
+            "R$"});
+            this.cmbCurrency.Location = new System.Drawing.Point(312, 88);
+            this.cmbCurrency.Name = "cmbCurrency";
+            this.cmbCurrency.Size = new System.Drawing.Size(66, 23);
+            this.cmbCurrency.TabIndex = 52;
+            // 
             // txtOrderId
             // 
             this.txtOrderId.Location = new System.Drawing.Point(549, 30);
@@ -462,6 +409,7 @@
             this.btnUpdate.TabIndex = 32;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtCustomerName
             // 
@@ -503,7 +451,7 @@
             // 
             this.lblShelf.AutoSize = true;
             this.lblShelf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShelf.Location = new System.Drawing.Point(191, 154);
+            this.lblShelf.Location = new System.Drawing.Point(281, 154);
             this.lblShelf.Name = "lblShelf";
             this.lblShelf.Size = new System.Drawing.Size(43, 16);
             this.lblShelf.TabIndex = 43;
@@ -521,7 +469,7 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(356, 87);
+            this.txtPrice.Location = new System.Drawing.Point(399, 87);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(72, 21);
             this.txtPrice.TabIndex = 32;
@@ -591,17 +539,98 @@
             // 
             this.ordersTableAdapter.ClearBeforeFill = true;
             // 
-            // cmbCurrency
+            // sICDbDataSet6
             // 
-            this.cmbCurrency.FormattingEnabled = true;
-            this.cmbCurrency.Items.AddRange(new object[] {
-            "CAD$",
-            "US$",
-            "R$"});
-            this.cmbCurrency.Location = new System.Drawing.Point(312, 88);
-            this.cmbCurrency.Name = "cmbCurrency";
-            this.cmbCurrency.Size = new System.Drawing.Size(33, 23);
-            this.cmbCurrency.TabIndex = 52;
+            this.sICDbDataSet6.DataSetName = "SICDbDataSet6";
+            this.sICDbDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ordersBindingSource1
+            // 
+            this.ordersBindingSource1.DataMember = "Orders";
+            this.ordersBindingSource1.DataSource = this.sICDbDataSet6;
+            // 
+            // ordersTableAdapter1
+            // 
+            this.ordersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // orderIdDataGridViewTextBoxColumn
+            // 
+            this.orderIdDataGridViewTextBoxColumn.DataPropertyName = "OrderId";
+            this.orderIdDataGridViewTextBoxColumn.HeaderText = "OrderId";
+            this.orderIdDataGridViewTextBoxColumn.Name = "orderIdDataGridViewTextBoxColumn";
+            this.orderIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            // 
+            // brandDataGridViewTextBoxColumn
+            // 
+            this.brandDataGridViewTextBoxColumn.DataPropertyName = "Brand";
+            this.brandDataGridViewTextBoxColumn.HeaderText = "Brand";
+            this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
+            // 
+            // specificationDataGridViewTextBoxColumn
+            // 
+            this.specificationDataGridViewTextBoxColumn.DataPropertyName = "Specification";
+            this.specificationDataGridViewTextBoxColumn.HeaderText = "Specification";
+            this.specificationDataGridViewTextBoxColumn.Name = "specificationDataGridViewTextBoxColumn";
+            // 
+            // warehouseDataGridViewTextBoxColumn
+            // 
+            this.warehouseDataGridViewTextBoxColumn.DataPropertyName = "Warehouse";
+            this.warehouseDataGridViewTextBoxColumn.HeaderText = "Warehouse";
+            this.warehouseDataGridViewTextBoxColumn.Name = "warehouseDataGridViewTextBoxColumn";
+            // 
+            // roomDataGridViewTextBoxColumn
+            // 
+            this.roomDataGridViewTextBoxColumn.DataPropertyName = "Room";
+            this.roomDataGridViewTextBoxColumn.HeaderText = "Room";
+            this.roomDataGridViewTextBoxColumn.Name = "roomDataGridViewTextBoxColumn";
+            // 
+            // aisleDataGridViewTextBoxColumn
+            // 
+            this.aisleDataGridViewTextBoxColumn.DataPropertyName = "Aisle";
+            this.aisleDataGridViewTextBoxColumn.HeaderText = "Aisle";
+            this.aisleDataGridViewTextBoxColumn.Name = "aisleDataGridViewTextBoxColumn";
+            // 
+            // productTypeDataGridViewTextBoxColumn
+            // 
+            this.productTypeDataGridViewTextBoxColumn.DataPropertyName = "ProductType";
+            this.productTypeDataGridViewTextBoxColumn.HeaderText = "ProductType";
+            this.productTypeDataGridViewTextBoxColumn.Name = "productTypeDataGridViewTextBoxColumn";
+            // 
+            // shelfDataGridViewTextBoxColumn
+            // 
+            this.shelfDataGridViewTextBoxColumn.DataPropertyName = "Shelf";
+            this.shelfDataGridViewTextBoxColumn.HeaderText = "Shelf";
+            this.shelfDataGridViewTextBoxColumn.Name = "shelfDataGridViewTextBoxColumn";
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // currencyDataGridViewTextBoxColumn
+            // 
+            this.currencyDataGridViewTextBoxColumn.DataPropertyName = "Currency";
+            this.currencyDataGridViewTextBoxColumn.HeaderText = "Currency";
+            this.currencyDataGridViewTextBoxColumn.Name = "currencyDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // customerCustomerIdDataGridViewTextBoxColumn
+            // 
+            this.customerCustomerIdDataGridViewTextBoxColumn.DataPropertyName = "CustomerCustomerId";
+            this.customerCustomerIdDataGridViewTextBoxColumn.HeaderText = "CustomerCustomerId";
+            this.customerCustomerIdDataGridViewTextBoxColumn.Name = "customerCustomerIdDataGridViewTextBoxColumn";
             // 
             // ManagerOrders
             // 
@@ -621,6 +650,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sICDbDataSet1)).EndInit();
             this.grbOrderRelease.ResumeLayout(false);
             this.grbOrderRelease.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sICDbDataSet6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -661,6 +692,12 @@
         private SICDbDataSet1 sICDbDataSet1;
         private System.Windows.Forms.BindingSource ordersBindingSource;
         private SICDbDataSet1TableAdapters.OrdersTableAdapter ordersTableAdapter;
+        private System.Windows.Forms.TextBox txtOrderId;
+        private System.Windows.Forms.Label lblOrderId;
+        private System.Windows.Forms.ComboBox cmbCurrency;
+        private SICDbDataSet6 sICDbDataSet6;
+        private System.Windows.Forms.BindingSource ordersBindingSource1;
+        private SICDbDataSet6TableAdapters.OrdersTableAdapter ordersTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn brandDataGridViewTextBoxColumn;
@@ -673,8 +710,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn currencyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox txtOrderId;
-        private System.Windows.Forms.Label lblOrderId;
-        private System.Windows.Forms.ComboBox cmbCurrency;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerCustomerIdDataGridViewTextBoxColumn;
     }
 }

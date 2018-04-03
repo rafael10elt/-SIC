@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.grbLogin = new System.Windows.Forms.GroupBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.grbLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbLogin
             // 
-            this.grbLogin.Controls.Add(this.btnLogout);
+            this.grbLogin.Controls.Add(this.btnClose);
             this.grbLogin.Controls.Add(this.btnLogin);
             this.grbLogin.Controls.Add(this.txtEmail);
             this.grbLogin.Controls.Add(this.txtPassword);
@@ -53,6 +53,17 @@
             this.grbLogin.TabIndex = 11;
             this.grbLogin.TabStop = false;
             this.grbLogin.Text = "Login";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(93, 120);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(66, 30);
+            this.btnClose.TabIndex = 10;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnLogin
             // 
@@ -100,17 +111,6 @@
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Password";
             // 
-            // btnLogout
-            // 
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(93, 120);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(66, 30);
-            this.btnLogout.TabIndex = 10;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,7 +138,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 

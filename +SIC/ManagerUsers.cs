@@ -125,9 +125,20 @@ namespace _SIC
                 user.UserId = Convert.ToInt32(txtUserId.Text);
                 user.ADM = option;
 
-                context.SaveChanges();
+                var m = MessageBox.Show("Are you sure?", "Update", MessageBoxButtons.YesNo);
+                if (m.ToString() == "Yes")
+                {
+                    context.SaveChanges();
+                    readUsers();
+                    lblWrongPassword.Visible = false;
+                }
+                else
+                {
+                    readUsers();
+                }
 
-                readUsers();
+
+                
             }
         }
 

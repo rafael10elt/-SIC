@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/01/2018 18:20:24
+-- Date Created: 04/03/2018 00:38:11
 -- Generated from EDMX file: C:\Users\Rafa\source\repos\+SIC\+SIC\SICEntityModel.edmx
 -- --------------------------------------------------
 
@@ -17,6 +17,9 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_CustomerOrder]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Orders] DROP CONSTRAINT [FK_CustomerOrder];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -76,7 +79,8 @@ CREATE TABLE [dbo].[Orders] (
     [Shelf] nvarchar(max)  NULL,
     [Quantity] nvarchar(max)  NULL,
     [Currency] nvarchar(max)  NULL,
-    [Price] nvarchar(max)  NULL
+    [Price] nvarchar(max)  NULL,
+    [CustomerCustomerId] int  NOT NULL
 );
 GO
 
@@ -105,6 +109,21 @@ GO
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
+
+-- Creating foreign key on [CustomerCustomerId] in table 'Orders'
+ALTER TABLE [dbo].[Orders]
+ADD CONSTRAINT [FK_CustomerOrder]
+    FOREIGN KEY ([CustomerCustomerId])
+    REFERENCES [dbo].[Customers]
+        ([CustomerId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_CustomerOrder'
+CREATE INDEX [IX_FK_CustomerOrder]
+ON [dbo].[Orders]
+    ([CustomerCustomerId]);
+GO
 
 -- --------------------------------------------------
 -- Script has ended

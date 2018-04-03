@@ -78,8 +78,24 @@ namespace _SIC
                     db.SaveChanges();
 
                     }
-                
-                    MessageBox.Show("Customer added sucessfully!", "New Customer Info", MessageBoxButtons.OK);
+                MessageBox.Show("User added sucessfully!", "New User Info", MessageBoxButtons.OK);
+                var m = MessageBox.Show("Do you want add more Users now?", "Warning", MessageBoxButtons.YesNo);
+                if (m.ToString() == "Yes")
+                {
+                    txtAddress.Text = "";
+                    txtBIN.Text = "";
+                    txtCity.Text = "";
+                    txtCompanyName.Text = "";
+                    txtEmail.Text = "";
+                    txtPhone.Text = "";
+                    txtPostalCode.Text = "";
+                    cmbProvince.Text = "";
+                }
+                else
+                {
+                    Form.ActiveForm.Close();
+                }
+                MessageBox.Show("Customer added sucessfully!", "New Customer Info", MessageBoxButtons.OK);
                     Form.ActiveForm.Close();
                 }
             }

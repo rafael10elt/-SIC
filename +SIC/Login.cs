@@ -13,7 +13,7 @@ namespace _SIC
 {
     public partial class Login : Form
     {
-        Form NewMain = new Main();
+       // Form NewMain = new Main();
         public Login()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace _SIC
 
         }
 
-        private void btnLogin_Click_1(object sender, EventArgs e)
+        public void btnLogin_Click_1(object sender, EventArgs e)
         {
             using (var db = new SICDbEntities())
             {
@@ -53,20 +53,26 @@ namespace _SIC
                 }
                 else
                 {
-                   NewMain.Show();
+
+                    string email = txtEmail.Text;
+                    Main f = new Main(email);
+                    f.Show();
+                    txtEmail.Text = "";
+                    txtPassword.Text = "";                 
+
                 }
             }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            var m = MessageBox.Show("Do you really want to Logout?", "Confirm Action", MessageBoxButtons.YesNo);
+            var m = MessageBox.Show("Do you really want to close?", "Confirm Action", MessageBoxButtons.YesNo);
             if (m.ToString() == "Yes")
             {
                 txtEmail.Text = "";
                 txtPassword.Text = "";
 
-                NewMain.Close();
+                Environment.Exit(0);
 
             }
             else

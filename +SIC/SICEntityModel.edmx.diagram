@@ -7,7 +7,8 @@
       <Diagram DiagramId="d470897386dc46e68f1fbb5035a00a36" Name="Diagram1" >
         <EntityTypeShape EntityType="SICDbModel.User" Width="1.5" PointX="4.875" PointY="0.5" />
         <EntityTypeShape EntityType="SICDbModel.Customer" Width="1.5" PointX="2.75" PointY="0.875" />
-        <EntityTypeShape EntityType="SICDbModel.Order" Width="1.5" PointX="7" PointY="0.875" />
+        <EntityTypeShape EntityType="SICDbModel.Order" Width="2" PointX="7" PointY="0.875" />
+        <AssociationConnector Association="SICDbModel.CustomerOrder" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
