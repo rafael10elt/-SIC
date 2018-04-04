@@ -127,11 +127,6 @@ namespace _SIC
             lblTimeActual.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
-        private void lblLogonTime_Click(object sender, EventArgs e)
-        {
-            lblLogonTime.Text = DateTime.Now.ToString("HH:mm:ss");
-            
-        }
-        
+               
     }
 }
