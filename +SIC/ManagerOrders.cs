@@ -25,11 +25,10 @@ namespace _SIC
         {
             SICDbEntities context = new SICDbEntities();
             Order ord = context.Orders.First(o => o.OrderId == OrderId);
-            //Order cust = context.Customers.First(c => c.CustomerId == CustomerId);
+            //Customer cust = context.Orders.First(c => c.CustomerCustomerId == CustomerId);
 
-            var cust = new Customer();
-            txtCustomerId.Text = cust.CustomerId.ToString();
-            txtCustomerName.Text = cust.CompanyName;
+            txtCustomerId.Text = ord.CustomerCustomerId.ToString();
+            txtCustomerName.Text = ord.Customer.CompanyName;
             txtProductName.Text = ord.ProductName;
             txtBrand.Text = ord.Brand;
             txtSpecification.Text = ord.Specification;
@@ -153,6 +152,11 @@ namespace _SIC
         private void grbOrdersList_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCustomerName_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

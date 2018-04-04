@@ -24,12 +24,17 @@ namespace _SIC
             
         }
 
-        private void addNewOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        public void addNewOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string x1 = lbl1.Text;
-            string x2 = lbl2.Text;
-            Form OrderRelease = new OrderRelease(x1, x2);
-            OrderRelease.Show();
+            //string x1 = lbl1.Text;
+            //string x2 = lbl2.Text;
+            //Form OrderRelease = new OrderRelease(x1, x2);
+            //OrderRelease.Show();
+
+            string CustomerId = "";
+            string CustomerName = "";
+            OrderRelease WindowOR = new OrderRelease(CustomerId, CustomerName);
+            WindowOR.Show();
         }
 
         private void viewReportsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,5 +111,27 @@ namespace _SIC
             }
             
         }
+
+        private void lblStart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblStartLogon_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTimeActual.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void lblLogonTime_Click(object sender, EventArgs e)
+        {
+            lblLogonTime.Text = DateTime.Now.ToString("HH:mm:ss");
+            
+        }
+        
     }
 }

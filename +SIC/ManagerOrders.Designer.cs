@@ -31,6 +31,21 @@
             this.components = new System.ComponentModel.Container();
             this.grbOrdersList = new System.Windows.Forms.GroupBox();
             this.dgvOrdersList = new System.Windows.Forms.DataGridView();
+            this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specificationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.warehouseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aisleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shelfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerCustomerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sICDbDataSet6 = new _SIC.SICDbDataSet6();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sICDbDataSet1 = new _SIC.SICDbDataSet1();
             this.cmbShelf = new System.Windows.Forms.ComboBox();
@@ -66,29 +81,14 @@
             this.lblBrand = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.ordersTableAdapter = new _SIC.SICDbDataSet1TableAdapters.OrdersTableAdapter();
-            this.sICDbDataSet6 = new _SIC.SICDbDataSet6();
-            this.ordersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.ordersTableAdapter1 = new _SIC.SICDbDataSet6TableAdapters.OrdersTableAdapter();
-            this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specificationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.warehouseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aisleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shelfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerCustomerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbOrdersList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdersList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sICDbDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sICDbDataSet1)).BeginInit();
             this.grbOrderRelease.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sICDbDataSet6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbOrdersList
@@ -127,6 +127,95 @@
             this.dgvOrdersList.Size = new System.Drawing.Size(714, 191);
             this.dgvOrdersList.TabIndex = 20;
             this.dgvOrdersList.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrdersList_CellContentClick);
+            // 
+            // orderIdDataGridViewTextBoxColumn
+            // 
+            this.orderIdDataGridViewTextBoxColumn.DataPropertyName = "OrderId";
+            this.orderIdDataGridViewTextBoxColumn.HeaderText = "OrderId";
+            this.orderIdDataGridViewTextBoxColumn.Name = "orderIdDataGridViewTextBoxColumn";
+            this.orderIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            // 
+            // brandDataGridViewTextBoxColumn
+            // 
+            this.brandDataGridViewTextBoxColumn.DataPropertyName = "Brand";
+            this.brandDataGridViewTextBoxColumn.HeaderText = "Brand";
+            this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
+            // 
+            // specificationDataGridViewTextBoxColumn
+            // 
+            this.specificationDataGridViewTextBoxColumn.DataPropertyName = "Specification";
+            this.specificationDataGridViewTextBoxColumn.HeaderText = "Specification";
+            this.specificationDataGridViewTextBoxColumn.Name = "specificationDataGridViewTextBoxColumn";
+            // 
+            // warehouseDataGridViewTextBoxColumn
+            // 
+            this.warehouseDataGridViewTextBoxColumn.DataPropertyName = "Warehouse";
+            this.warehouseDataGridViewTextBoxColumn.HeaderText = "Warehouse";
+            this.warehouseDataGridViewTextBoxColumn.Name = "warehouseDataGridViewTextBoxColumn";
+            // 
+            // roomDataGridViewTextBoxColumn
+            // 
+            this.roomDataGridViewTextBoxColumn.DataPropertyName = "Room";
+            this.roomDataGridViewTextBoxColumn.HeaderText = "Room";
+            this.roomDataGridViewTextBoxColumn.Name = "roomDataGridViewTextBoxColumn";
+            // 
+            // aisleDataGridViewTextBoxColumn
+            // 
+            this.aisleDataGridViewTextBoxColumn.DataPropertyName = "Aisle";
+            this.aisleDataGridViewTextBoxColumn.HeaderText = "Aisle";
+            this.aisleDataGridViewTextBoxColumn.Name = "aisleDataGridViewTextBoxColumn";
+            // 
+            // productTypeDataGridViewTextBoxColumn
+            // 
+            this.productTypeDataGridViewTextBoxColumn.DataPropertyName = "ProductType";
+            this.productTypeDataGridViewTextBoxColumn.HeaderText = "ProductType";
+            this.productTypeDataGridViewTextBoxColumn.Name = "productTypeDataGridViewTextBoxColumn";
+            // 
+            // shelfDataGridViewTextBoxColumn
+            // 
+            this.shelfDataGridViewTextBoxColumn.DataPropertyName = "Shelf";
+            this.shelfDataGridViewTextBoxColumn.HeaderText = "Shelf";
+            this.shelfDataGridViewTextBoxColumn.Name = "shelfDataGridViewTextBoxColumn";
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // currencyDataGridViewTextBoxColumn
+            // 
+            this.currencyDataGridViewTextBoxColumn.DataPropertyName = "Currency";
+            this.currencyDataGridViewTextBoxColumn.HeaderText = "Currency";
+            this.currencyDataGridViewTextBoxColumn.Name = "currencyDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // customerCustomerIdDataGridViewTextBoxColumn
+            // 
+            this.customerCustomerIdDataGridViewTextBoxColumn.DataPropertyName = "CustomerCustomerId";
+            this.customerCustomerIdDataGridViewTextBoxColumn.HeaderText = "CustomerCustomerId";
+            this.customerCustomerIdDataGridViewTextBoxColumn.Name = "customerCustomerIdDataGridViewTextBoxColumn";
+            // 
+            // ordersBindingSource1
+            // 
+            this.ordersBindingSource1.DataMember = "Orders";
+            this.ordersBindingSource1.DataSource = this.sICDbDataSet6;
+            // 
+            // sICDbDataSet6
+            // 
+            this.sICDbDataSet6.DataSetName = "SICDbDataSet6";
+            this.sICDbDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ordersBindingSource
             // 
@@ -418,6 +507,7 @@
             this.txtCustomerName.ReadOnly = true;
             this.txtCustomerName.Size = new System.Drawing.Size(154, 21);
             this.txtCustomerName.TabIndex = 48;
+            this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
             // 
             // lblCustomerName
             // 
@@ -539,98 +629,9 @@
             // 
             this.ordersTableAdapter.ClearBeforeFill = true;
             // 
-            // sICDbDataSet6
-            // 
-            this.sICDbDataSet6.DataSetName = "SICDbDataSet6";
-            this.sICDbDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ordersBindingSource1
-            // 
-            this.ordersBindingSource1.DataMember = "Orders";
-            this.ordersBindingSource1.DataSource = this.sICDbDataSet6;
-            // 
             // ordersTableAdapter1
             // 
             this.ordersTableAdapter1.ClearBeforeFill = true;
-            // 
-            // orderIdDataGridViewTextBoxColumn
-            // 
-            this.orderIdDataGridViewTextBoxColumn.DataPropertyName = "OrderId";
-            this.orderIdDataGridViewTextBoxColumn.HeaderText = "OrderId";
-            this.orderIdDataGridViewTextBoxColumn.Name = "orderIdDataGridViewTextBoxColumn";
-            this.orderIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            // 
-            // brandDataGridViewTextBoxColumn
-            // 
-            this.brandDataGridViewTextBoxColumn.DataPropertyName = "Brand";
-            this.brandDataGridViewTextBoxColumn.HeaderText = "Brand";
-            this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
-            // 
-            // specificationDataGridViewTextBoxColumn
-            // 
-            this.specificationDataGridViewTextBoxColumn.DataPropertyName = "Specification";
-            this.specificationDataGridViewTextBoxColumn.HeaderText = "Specification";
-            this.specificationDataGridViewTextBoxColumn.Name = "specificationDataGridViewTextBoxColumn";
-            // 
-            // warehouseDataGridViewTextBoxColumn
-            // 
-            this.warehouseDataGridViewTextBoxColumn.DataPropertyName = "Warehouse";
-            this.warehouseDataGridViewTextBoxColumn.HeaderText = "Warehouse";
-            this.warehouseDataGridViewTextBoxColumn.Name = "warehouseDataGridViewTextBoxColumn";
-            // 
-            // roomDataGridViewTextBoxColumn
-            // 
-            this.roomDataGridViewTextBoxColumn.DataPropertyName = "Room";
-            this.roomDataGridViewTextBoxColumn.HeaderText = "Room";
-            this.roomDataGridViewTextBoxColumn.Name = "roomDataGridViewTextBoxColumn";
-            // 
-            // aisleDataGridViewTextBoxColumn
-            // 
-            this.aisleDataGridViewTextBoxColumn.DataPropertyName = "Aisle";
-            this.aisleDataGridViewTextBoxColumn.HeaderText = "Aisle";
-            this.aisleDataGridViewTextBoxColumn.Name = "aisleDataGridViewTextBoxColumn";
-            // 
-            // productTypeDataGridViewTextBoxColumn
-            // 
-            this.productTypeDataGridViewTextBoxColumn.DataPropertyName = "ProductType";
-            this.productTypeDataGridViewTextBoxColumn.HeaderText = "ProductType";
-            this.productTypeDataGridViewTextBoxColumn.Name = "productTypeDataGridViewTextBoxColumn";
-            // 
-            // shelfDataGridViewTextBoxColumn
-            // 
-            this.shelfDataGridViewTextBoxColumn.DataPropertyName = "Shelf";
-            this.shelfDataGridViewTextBoxColumn.HeaderText = "Shelf";
-            this.shelfDataGridViewTextBoxColumn.Name = "shelfDataGridViewTextBoxColumn";
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // currencyDataGridViewTextBoxColumn
-            // 
-            this.currencyDataGridViewTextBoxColumn.DataPropertyName = "Currency";
-            this.currencyDataGridViewTextBoxColumn.HeaderText = "Currency";
-            this.currencyDataGridViewTextBoxColumn.Name = "currencyDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // customerCustomerIdDataGridViewTextBoxColumn
-            // 
-            this.customerCustomerIdDataGridViewTextBoxColumn.DataPropertyName = "CustomerCustomerId";
-            this.customerCustomerIdDataGridViewTextBoxColumn.HeaderText = "CustomerCustomerId";
-            this.customerCustomerIdDataGridViewTextBoxColumn.Name = "customerCustomerIdDataGridViewTextBoxColumn";
             // 
             // ManagerOrders
             // 
@@ -646,12 +647,12 @@
             this.Load += new System.EventHandler(this.ManagerOrders_Load);
             this.grbOrdersList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdersList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sICDbDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sICDbDataSet1)).EndInit();
             this.grbOrderRelease.ResumeLayout(false);
             this.grbOrderRelease.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sICDbDataSet6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

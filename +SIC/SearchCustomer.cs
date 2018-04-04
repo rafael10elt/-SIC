@@ -53,17 +53,33 @@ namespace _SIC
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Form.ActiveForm.Close();
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            Form.ActiveForm.Close();
             string CustomerId = txtCustomerId.Text;
-            string CustomerName= txtCompanyName.Text;
+            string CustomerName = txtCompanyName.Text;
             OrderRelease WindowOR = new OrderRelease(CustomerId, CustomerName);
             WindowOR.Show();
-                     
+            //Form NewSearchCustomer = new SearchCustomer();
+            //NewSearchCustomer.Close();
 
         }
+
+        public void btnOK_Click(object sender, EventArgs e)
+        {
+            string CustomerId = txtCustomerId.Text;
+            string CustomerName = txtCompanyName.Text;
+            OrderRelease WindowOR = new OrderRelease(CustomerId, CustomerName);
+            Form.ActiveForm.Close();                       
+            WindowOR.Show();
+            
+            //Form NewSearchCustomer = new SearchCustomer();
+            //NewSearchCustomer.Close();
+
+
+
+
+
+
+
+        }
+
     }
 }

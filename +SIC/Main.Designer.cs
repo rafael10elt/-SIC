@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +48,9 @@
             this.lbl2 = new System.Windows.Forms.Label();
             this.linklblLogout = new System.Windows.Forms.LinkLabel();
             this.grbUserInfo = new System.Windows.Forms.GroupBox();
+            this.lblTimeActual = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblTime = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.grbUserInfo.SuspendLayout();
             this.SuspendLayout();
@@ -150,7 +154,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(0, 82);
+            this.monthCalendar1.Location = new System.Drawing.Point(0, 115);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 3;
             // 
@@ -201,7 +205,8 @@
             this.linklblLogout.AutoSize = true;
             this.linklblLogout.BackColor = System.Drawing.Color.Transparent;
             this.linklblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linklblLogout.Location = new System.Drawing.Point(6, 33);
+            this.linklblLogout.LinkColor = System.Drawing.Color.Red;
+            this.linklblLogout.Location = new System.Drawing.Point(88, 60);
             this.linklblLogout.Name = "linklblLogout";
             this.linklblLogout.Size = new System.Drawing.Size(46, 13);
             this.linklblLogout.TabIndex = 8;
@@ -211,16 +216,45 @@
             // 
             // grbUserInfo
             // 
+            this.grbUserInfo.Controls.Add(this.lblTime);
+            this.grbUserInfo.Controls.Add(this.lblTimeActual);
             this.grbUserInfo.Controls.Add(this.lblEmailUserLogon);
             this.grbUserInfo.Controls.Add(this.linklblLogout);
             this.grbUserInfo.Controls.Add(this.lblEmailUserLogonText);
             this.grbUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbUserInfo.Location = new System.Drawing.Point(0, 26);
+            this.grbUserInfo.Location = new System.Drawing.Point(0, 24);
             this.grbUserInfo.Name = "grbUserInfo";
-            this.grbUserInfo.Size = new System.Drawing.Size(227, 56);
+            this.grbUserInfo.Size = new System.Drawing.Size(227, 91);
             this.grbUserInfo.TabIndex = 9;
             this.grbUserInfo.TabStop = false;
             this.grbUserInfo.Text = "User Info";
+            // 
+            // lblTimeActual
+            // 
+            this.lblTimeActual.AutoSize = true;
+            this.lblTimeActual.ForeColor = System.Drawing.Color.Blue;
+            this.lblTimeActual.Location = new System.Drawing.Point(54, 35);
+            this.lblTimeActual.Name = "lblTimeActual";
+            this.lblTimeActual.Size = new System.Drawing.Size(74, 13);
+            this.lblTimeActual.TabIndex = 10;
+            this.lblTimeActual.Text = "Actual Time";
+            this.lblTimeActual.Click += new System.EventHandler(this.lblStartLogon_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tag = "";
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(8, 35);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(38, 13);
+            this.lblTime.TabIndex = 11;
+            this.lblTime.Text = "Time:";
             // 
             // Main
             // 
@@ -271,5 +305,8 @@
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.LinkLabel linklblLogout;
         private System.Windows.Forms.GroupBox grbUserInfo;
+        private System.Windows.Forms.Label lblTimeActual;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblTime;
     }
 }

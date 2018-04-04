@@ -87,7 +87,7 @@ namespace _SIC
 
                     lblWrongPassword.Visible = false;
                     MessageBox.Show("User added sucessfully!", "New User Info", MessageBoxButtons.OK);
-                    var m= MessageBox.Show("Do you want add more Users now?", "Warning", MessageBoxButtons.YesNo);
+                    var m= MessageBox.Show("Do you want add one more Users now?", "Warning", MessageBoxButtons.YesNo);
                     if (m.ToString() == "Yes")
                     {
                         txtFirstName.Text = "";

@@ -75,8 +75,8 @@ namespace _SIC
                     using (var db = new SICDbEntities())
                     {
                         var ord = new Order();
-                        var cust = new Customer();
-                        cust.CompanyName = txtCustomerName.Text;
+                        
+                        ord.CustomerCustomerId =Convert.ToInt32(txtCustomerId.Text);
                         ord.ProductName = txtProductName.Text;
                         ord.Brand = txtBrand.Text;
                         ord.Specification = txtSpecification.Text;
@@ -96,25 +96,32 @@ namespace _SIC
                     }
 
                     MessageBox.Show("Order released sucessfully!", "Order Release Info", MessageBoxButtons.OK);
+                    var m = MessageBox.Show("Do you want add one more Order now?", "Warning", MessageBoxButtons.YesNo);
+                    if (m.ToString() == "Yes")
+                    {
                     txtBrand.Text = "";
                     txtPrice.Text = "";
                     txtProductName.Text = "";
                     txtQuantity.Text = "";
                     txtSpecification.Text = "";
                     cmbProductType.Text = "";
-
+                    }
+                    else
+                    {
+                        Form.ActiveForm.Close();
+                    }
                 }
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+         public void btnSearch_Click(object sender, EventArgs e)
         {
             Form.ActiveForm.Close();
-            Form NewSearchCustomer = new SearchCustomer();            
+            Form NewSearchCustomer = new SearchCustomer();
             NewSearchCustomer.Show();
 
-            //string x1="", x2="";
-            //Form d = new OrderRelease(x1,x2);
+            //string x1 = "", x2 = "";
+            //Form d = new OrderRelease(x1, x2);
             //d.Close();
 
         }

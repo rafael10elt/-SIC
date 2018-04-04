@@ -49,7 +49,7 @@
             this.grbLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbLogin.Location = new System.Drawing.Point(12, 12);
             this.grbLogin.Name = "grbLogin";
-            this.grbLogin.Size = new System.Drawing.Size(192, 171);
+            this.grbLogin.Size = new System.Drawing.Size(192, 207);
             this.grbLogin.TabIndex = 11;
             this.grbLogin.TabStop = false;
             this.grbLogin.Text = "Login";
@@ -57,18 +57,18 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(93, 120);
+            this.btnClose.Location = new System.Drawing.Point(6, 153);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(66, 30);
+            this.btnClose.Size = new System.Drawing.Size(180, 30);
             this.btnClose.TabIndex = 10;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "Close Application";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(21, 120);
+            this.btnLogin.Location = new System.Drawing.Point(63, 120);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(66, 30);
             this.btnLogin.TabIndex = 8;
@@ -116,7 +116,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(215, 195);
+            this.ClientSize = new System.Drawing.Size(215, 231);
             this.Controls.Add(this.grbLogin);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
