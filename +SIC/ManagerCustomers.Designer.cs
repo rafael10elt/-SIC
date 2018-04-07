@@ -45,11 +45,9 @@
             this.txtPostalCode = new System.Windows.Forms.TextBox();
             this.lblPostalCode = new System.Windows.Forms.Label();
             this.cmbProvince = new System.Windows.Forms.ComboBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblProvince = new System.Windows.Forms.Label();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.txtBIN = new System.Windows.Forms.TextBox();
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.lblBIN = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
@@ -59,6 +57,10 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.grbRegisterCustomer = new System.Windows.Forms.GroupBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblSearchCustomer = new System.Windows.Forms.Label();
+            this.txtBIN = new System.Windows.Forms.MaskedTextBox();
+            this.txtPhone = new System.Windows.Forms.MaskedTextBox();
             this.txtCustomerId = new System.Windows.Forms.TextBox();
             this.lblCustomerId = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
@@ -66,6 +68,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.customersTableAdapter = new _SIC.SICDbDataSet2TableAdapters.CustomersTableAdapter();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.grbCustomerList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
@@ -173,7 +177,7 @@
             // 
             // txtPostalCode
             // 
-            this.txtPostalCode.Location = new System.Drawing.Point(312, 136);
+            this.txtPostalCode.Location = new System.Drawing.Point(312, 176);
             this.txtPostalCode.Name = "txtPostalCode";
             this.txtPostalCode.Size = new System.Drawing.Size(154, 21);
             this.txtPostalCode.TabIndex = 45;
@@ -182,7 +186,7 @@
             // 
             this.lblPostalCode.AutoSize = true;
             this.lblPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostalCode.Location = new System.Drawing.Point(213, 137);
+            this.lblPostalCode.Location = new System.Drawing.Point(213, 177);
             this.lblPostalCode.Name = "lblPostalCode";
             this.lblPostalCode.Size = new System.Drawing.Size(93, 16);
             this.lblPostalCode.TabIndex = 44;
@@ -206,23 +210,16 @@
             "Quebec",
             "Saskatchewan",
             "Yukon"});
-            this.cmbProvince.Location = new System.Drawing.Point(84, 134);
+            this.cmbProvince.Location = new System.Drawing.Point(84, 174);
             this.cmbProvince.Name = "cmbProvince";
             this.cmbProvince.Size = new System.Drawing.Size(123, 23);
             this.cmbProvince.TabIndex = 43;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(70, 67);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(154, 21);
-            this.txtPhone.TabIndex = 19;
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(12, 72);
+            this.lblPhone.Location = new System.Drawing.Point(12, 112);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(52, 16);
             this.lblPhone.TabIndex = 18;
@@ -232,7 +229,7 @@
             // 
             this.lblProvince.AutoSize = true;
             this.lblProvince.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProvince.Location = new System.Drawing.Point(12, 137);
+            this.lblProvince.Location = new System.Drawing.Point(12, 177);
             this.lblProvince.Name = "lblProvince";
             this.lblProvince.Size = new System.Drawing.Size(69, 16);
             this.lblProvince.TabIndex = 16;
@@ -240,41 +237,37 @@
             // 
             // txtCompanyName
             // 
-            this.txtCompanyName.Location = new System.Drawing.Point(136, 31);
+            this.txtCompanyName.Location = new System.Drawing.Point(136, 71);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(154, 21);
             this.txtCompanyName.TabIndex = 14;
-            // 
-            // txtBIN
-            // 
-            this.txtBIN.Location = new System.Drawing.Point(338, 31);
-            this.txtBIN.Name = "txtBIN";
-            this.txtBIN.Size = new System.Drawing.Size(128, 21);
-            this.txtBIN.TabIndex = 15;
+            this.txtCompanyName.TextChanged += new System.EventHandler(this.txtCompanyName_TextChanged);
             // 
             // lblCompanyName
             // 
             this.lblCompanyName.AutoSize = true;
             this.lblCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanyName.Location = new System.Drawing.Point(12, 34);
+            this.lblCompanyName.Location = new System.Drawing.Point(12, 74);
             this.lblCompanyName.Name = "lblCompanyName";
             this.lblCompanyName.Size = new System.Drawing.Size(118, 16);
             this.lblCompanyName.TabIndex = 12;
             this.lblCompanyName.Text = "Company Name";
+            this.lblCompanyName.Click += new System.EventHandler(this.lblCompanyName_Click);
             // 
             // lblBIN
             // 
             this.lblBIN.AutoSize = true;
             this.lblBIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBIN.Location = new System.Drawing.Point(299, 34);
+            this.lblBIN.Location = new System.Drawing.Point(299, 74);
             this.lblBIN.Name = "lblBIN";
             this.lblBIN.Size = new System.Drawing.Size(33, 16);
             this.lblBIN.TabIndex = 13;
             this.lblBIN.Text = "BIN";
+            this.lblBIN.Click += new System.EventHandler(this.lblBIN_Click);
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(286, 101);
+            this.txtCity.Location = new System.Drawing.Point(286, 141);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(154, 21);
             this.txtCity.TabIndex = 10;
@@ -283,7 +276,7 @@
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(244, 101);
+            this.lblCity.Location = new System.Drawing.Point(244, 141);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(34, 16);
             this.lblCity.TabIndex = 9;
@@ -291,14 +284,15 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(286, 64);
+            this.txtEmail.Location = new System.Drawing.Point(286, 104);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(179, 21);
             this.txtEmail.TabIndex = 5;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(84, 101);
+            this.txtAddress.Location = new System.Drawing.Point(84, 141);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(154, 21);
             this.txtAddress.TabIndex = 6;
@@ -307,17 +301,18 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(233, 67);
+            this.lblEmail.Location = new System.Drawing.Point(233, 107);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(47, 16);
             this.lblEmail.TabIndex = 2;
             this.lblEmail.Text = "Email";
+            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(12, 104);
+            this.lblAddress.Location = new System.Drawing.Point(12, 144);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(66, 16);
             this.lblAddress.TabIndex = 3;
@@ -325,6 +320,12 @@
             // 
             // grbRegisterCustomer
             // 
+            this.grbRegisterCustomer.Controls.Add(this.btnReset);
+            this.grbRegisterCustomer.Controls.Add(this.btnSearch);
+            this.grbRegisterCustomer.Controls.Add(this.txtSearch);
+            this.grbRegisterCustomer.Controls.Add(this.lblSearchCustomer);
+            this.grbRegisterCustomer.Controls.Add(this.txtBIN);
+            this.grbRegisterCustomer.Controls.Add(this.txtPhone);
             this.grbRegisterCustomer.Controls.Add(this.txtCustomerId);
             this.grbRegisterCustomer.Controls.Add(this.lblCustomerId);
             this.grbRegisterCustomer.Controls.Add(this.btnClear);
@@ -334,11 +335,9 @@
             this.grbRegisterCustomer.Controls.Add(this.txtPostalCode);
             this.grbRegisterCustomer.Controls.Add(this.lblPostalCode);
             this.grbRegisterCustomer.Controls.Add(this.cmbProvince);
-            this.grbRegisterCustomer.Controls.Add(this.txtPhone);
             this.grbRegisterCustomer.Controls.Add(this.lblPhone);
             this.grbRegisterCustomer.Controls.Add(this.lblProvince);
             this.grbRegisterCustomer.Controls.Add(this.txtCompanyName);
-            this.grbRegisterCustomer.Controls.Add(this.txtBIN);
             this.grbRegisterCustomer.Controls.Add(this.lblCompanyName);
             this.grbRegisterCustomer.Controls.Add(this.lblBIN);
             this.grbRegisterCustomer.Controls.Add(this.txtCity);
@@ -348,16 +347,51 @@
             this.grbRegisterCustomer.Controls.Add(this.lblEmail);
             this.grbRegisterCustomer.Controls.Add(this.lblAddress);
             this.grbRegisterCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbRegisterCustomer.Location = new System.Drawing.Point(18, 256);
+            this.grbRegisterCustomer.Location = new System.Drawing.Point(18, 255);
             this.grbRegisterCustomer.Name = "grbRegisterCustomer";
-            this.grbRegisterCustomer.Size = new System.Drawing.Size(727, 233);
+            this.grbRegisterCustomer.Size = new System.Drawing.Size(727, 261);
             this.grbRegisterCustomer.TabIndex = 23;
             this.grbRegisterCustomer.TabStop = false;
             this.grbRegisterCustomer.Text = "Register Customer";
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(318, 34);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(102, 21);
+            this.txtSearch.TabIndex = 55;
+            // 
+            // lblSearchCustomer
+            // 
+            this.lblSearchCustomer.AutoSize = true;
+            this.lblSearchCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchCustomer.Location = new System.Drawing.Point(186, 40);
+            this.lblSearchCustomer.Name = "lblSearchCustomer";
+            this.lblSearchCustomer.Size = new System.Drawing.Size(126, 16);
+            this.lblSearchCustomer.TabIndex = 54;
+            this.lblSearchCustomer.Text = "Search Customer";
+            // 
+            // txtBIN
+            // 
+            this.txtBIN.Location = new System.Drawing.Point(332, 71);
+            this.txtBIN.Mask = "000-00-0000";
+            this.txtBIN.Name = "txtBIN";
+            this.txtBIN.Size = new System.Drawing.Size(100, 21);
+            this.txtBIN.TabIndex = 53;
+            this.txtBIN.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtBIN_MaskInputRejected);
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(84, 104);
+            this.txtPhone.Mask = "(999) 000-0000";
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(107, 21);
+            this.txtPhone.TabIndex = 52;
+            this.txtPhone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtPhone_MaskInputRejected);
+            // 
             // txtCustomerId
             // 
-            this.txtCustomerId.Location = new System.Drawing.Point(568, 31);
+            this.txtCustomerId.Location = new System.Drawing.Point(108, 37);
             this.txtCustomerId.Name = "txtCustomerId";
             this.txtCustomerId.ReadOnly = true;
             this.txtCustomerId.Size = new System.Drawing.Size(72, 21);
@@ -367,7 +401,7 @@
             // 
             this.lblCustomerId.AutoSize = true;
             this.lblCustomerId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerId.Location = new System.Drawing.Point(472, 34);
+            this.lblCustomerId.Location = new System.Drawing.Point(12, 40);
             this.lblCustomerId.Name = "lblCustomerId";
             this.lblCustomerId.Size = new System.Drawing.Size(90, 16);
             this.lblCustomerId.TabIndex = 50;
@@ -376,7 +410,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(368, 188);
+            this.btnClear.Location = new System.Drawing.Point(368, 228);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(64, 30);
             this.btnClear.TabIndex = 49;
@@ -387,7 +421,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(456, 188);
+            this.btnClose.Location = new System.Drawing.Point(456, 228);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(64, 30);
             this.btnClose.TabIndex = 48;
@@ -398,7 +432,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(285, 188);
+            this.btnDelete.Location = new System.Drawing.Point(285, 228);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(64, 30);
             this.btnDelete.TabIndex = 47;
@@ -409,7 +443,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(183, 188);
+            this.btnUpdate.Location = new System.Drawing.Point(183, 228);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(82, 30);
             this.btnUpdate.TabIndex = 46;
@@ -421,11 +455,33 @@
             // 
             this.customersTableAdapter.ClearBeforeFill = true;
             // 
+            // btnReset
+            // 
+            this.btnReset.BackgroundImage = global::_SIC.Properties.Resources.ic_update;
+            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReset.Location = new System.Drawing.Point(456, 33);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(22, 22);
+            this.btnReset.TabIndex = 57;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::_SIC.Properties.Resources.ic_search;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Location = new System.Drawing.Point(426, 33);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(22, 22);
+            this.btnSearch.TabIndex = 56;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // ManagerCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 492);
+            this.ClientSize = new System.Drawing.Size(753, 525);
             this.Controls.Add(this.grbRegisterCustomer);
             this.Controls.Add(this.grbCustomerList);
             this.Name = "ManagerCustomers";
@@ -450,11 +506,9 @@
         private System.Windows.Forms.TextBox txtPostalCode;
         private System.Windows.Forms.Label lblPostalCode;
         private System.Windows.Forms.ComboBox cmbProvince;
-        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblProvince;
         private System.Windows.Forms.TextBox txtCompanyName;
-        private System.Windows.Forms.TextBox txtBIN;
         private System.Windows.Forms.Label lblCompanyName;
         private System.Windows.Forms.Label lblBIN;
         private System.Windows.Forms.TextBox txtCity;
@@ -482,5 +536,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn postalCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox txtCustomerId;
         private System.Windows.Forms.Label lblCustomerId;
+        private System.Windows.Forms.MaskedTextBox txtPhone;
+        private System.Windows.Forms.MaskedTextBox txtBIN;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label lblSearchCustomer;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnReset;
     }
 }

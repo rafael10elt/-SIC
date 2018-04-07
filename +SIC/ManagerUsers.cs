@@ -47,6 +47,7 @@ namespace _SIC
         public ManagerUsers()
         {
             InitializeComponent();
+            readUsers();
         }
                 private void ManagerUsers_Load(object sender, EventArgs e)
         {
@@ -164,6 +165,18 @@ namespace _SIC
         private void dgvUsersList_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SICDbEntities User = new SICDbEntities();
+            IEnumerable<User> list = from u in User.Users where u.FirstName == txtSearch.Text || u.LastName == txtSearch.Text || u.JobTitle == txtSearch.Text || u.EmployeeId == txtSearch.Text || u.Email == txtSearch.Text || u.ADM == txtSearch.Text select u;
+            dgvUsersList.DataSource = list.ToList();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            readUsers();
         }
     }
     }

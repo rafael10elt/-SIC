@@ -39,6 +39,7 @@ namespace _SIC
         public ManagerCustomers()
         {
             InitializeComponent();
+            readCustomer();
         }
 
         private void ManagerCustomers_Load(object sender, EventArgs e)
@@ -83,6 +84,7 @@ namespace _SIC
         {
             var CustomerId = Convert.ToInt32(dgvCustomerList.Rows[e.RowIndex].Cells[0].Value);
             FindCustomer(CustomerId);
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -135,6 +137,54 @@ namespace _SIC
         private void dgvCustomerList_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void lblCompanyName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCompanyName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBIN_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void lblBIN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPhone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            readCustomer();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            
+            SICDbEntities Cust = new SICDbEntities();
+            IEnumerable<Customer> list = from c in Cust.Customers where c.CompanyName == txtSearch.Text || c.BIN == txtSearch.Text || c.Email == txtSearch.Text || c.Province == txtSearch.Text || c.City == txtSearch.Text select c;
+            dgvCustomerList.DataSource = list.ToList();
         }
     }
 }

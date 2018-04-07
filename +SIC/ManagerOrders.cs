@@ -46,6 +46,7 @@ namespace _SIC
             public ManagerOrders()
         {
             InitializeComponent();
+            readOrder();
         }
 
         private void ManagerOrders_Load(object sender, EventArgs e)
@@ -157,6 +158,18 @@ namespace _SIC
         private void txtCustomerName_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            readOrder();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SICDbEntities Ord = new SICDbEntities();
+            IEnumerable<Order> list = from o in Ord.Orders where o.ProductName == txtSearch.Text || o.Brand == txtSearch.Text || o.Specification == txtSearch.Text || o.Warehouse == txtSearch.Text || o.Room == txtSearch.Text || o.Aisle == txtSearch.Text || o.Shelf == txtSearch.Text || o.ProductType == txtSearch.Text || o.Quantity == txtSearch.Text select o;
+            dgvOrdersList.DataSource = list.ToList();
         }
     }
 }

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.grbRegisterCustomer = new System.Windows.Forms.GroupBox();
+            this.txtBIN = new System.Windows.Forms.MaskedTextBox();
+            this.txtPhone = new System.Windows.Forms.MaskedTextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.txtPostalCode = new System.Windows.Forms.TextBox();
             this.lblPostalCode = new System.Windows.Forms.Label();
             this.cmbProvince = new System.Windows.Forms.ComboBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblProvince = new System.Windows.Forms.Label();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.txtBIN = new System.Windows.Forms.TextBox();
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.lblBIN = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -53,15 +53,15 @@
             // 
             // grbRegisterCustomer
             // 
+            this.grbRegisterCustomer.Controls.Add(this.txtBIN);
+            this.grbRegisterCustomer.Controls.Add(this.txtPhone);
             this.grbRegisterCustomer.Controls.Add(this.btnClear);
             this.grbRegisterCustomer.Controls.Add(this.txtPostalCode);
             this.grbRegisterCustomer.Controls.Add(this.lblPostalCode);
             this.grbRegisterCustomer.Controls.Add(this.cmbProvince);
-            this.grbRegisterCustomer.Controls.Add(this.txtPhone);
             this.grbRegisterCustomer.Controls.Add(this.lblPhone);
             this.grbRegisterCustomer.Controls.Add(this.lblProvince);
             this.grbRegisterCustomer.Controls.Add(this.txtCompanyName);
-            this.grbRegisterCustomer.Controls.Add(this.txtBIN);
             this.grbRegisterCustomer.Controls.Add(this.lblCompanyName);
             this.grbRegisterCustomer.Controls.Add(this.lblBIN);
             this.grbRegisterCustomer.Controls.Add(this.btnCancel);
@@ -80,6 +80,22 @@
             this.grbRegisterCustomer.TabStop = false;
             this.grbRegisterCustomer.Text = "Register Customer";
             // 
+            // txtBIN
+            // 
+            this.txtBIN.Location = new System.Drawing.Point(338, 31);
+            this.txtBIN.Mask = "000-00-0000";
+            this.txtBIN.Name = "txtBIN";
+            this.txtBIN.Size = new System.Drawing.Size(93, 21);
+            this.txtBIN.TabIndex = 52;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(70, 64);
+            this.txtPhone.Mask = "(999) 000-0000";
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(107, 21);
+            this.txtPhone.TabIndex = 51;
+            // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -95,7 +111,7 @@
             // 
             this.txtPostalCode.Location = new System.Drawing.Point(343, 133);
             this.txtPostalCode.Name = "txtPostalCode";
-            this.txtPostalCode.Size = new System.Drawing.Size(122, 21);
+            this.txtPostalCode.Size = new System.Drawing.Size(77, 21);
             this.txtPostalCode.TabIndex = 45;
             // 
             // lblPostalCode
@@ -131,13 +147,6 @@
             this.cmbProvince.Size = new System.Drawing.Size(154, 23);
             this.cmbProvince.TabIndex = 43;
             // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(70, 67);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(154, 21);
-            this.txtPhone.TabIndex = 19;
-            // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
@@ -164,13 +173,6 @@
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(154, 21);
             this.txtCompanyName.TabIndex = 14;
-            // 
-            // txtBIN
-            // 
-            this.txtBIN.Location = new System.Drawing.Point(338, 31);
-            this.txtBIN.Name = "txtBIN";
-            this.txtBIN.Size = new System.Drawing.Size(128, 21);
-            this.txtBIN.TabIndex = 15;
             // 
             // lblCompanyName
             // 
@@ -286,11 +288,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grbRegisterCustomer;
-        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblProvince;
         private System.Windows.Forms.TextBox txtCompanyName;
-        private System.Windows.Forms.TextBox txtBIN;
         private System.Windows.Forms.Label lblCompanyName;
         private System.Windows.Forms.Label lblBIN;
         private System.Windows.Forms.Button btnCancel;
@@ -301,9 +301,11 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.TextBox txtPostalCode;
         private System.Windows.Forms.Label lblPostalCode;
         private System.Windows.Forms.ComboBox cmbProvince;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.MaskedTextBox txtBIN;
+        private System.Windows.Forms.MaskedTextBox txtPhone;
+        private System.Windows.Forms.TextBox txtPostalCode;
     }
 }

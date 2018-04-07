@@ -26,11 +26,7 @@ namespace _SIC
 
         public void addNewOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //string x1 = lbl1.Text;
-            //string x2 = lbl2.Text;
-            //Form OrderRelease = new OrderRelease(x1, x2);
-            //OrderRelease.Show();
-
+            
             string CustomerId = "";
             string CustomerName = "";
             OrderRelease WindowOR = new OrderRelease(CustomerId, CustomerName);
@@ -54,7 +50,7 @@ namespace _SIC
             SICDbEntities context = new SICDbEntities();
             String Email = lblEmailUserLogonText.Text;
             User user = context.Users.First(u => u.Email == Email);
-            //var m = MessageBox.Show("Are you sure?", "Delete", MessageBoxButtons.YesNo);
+            
             if (user.ADM == "YES")
             {
                 Form NewUser = new UserRegistration();
@@ -72,7 +68,7 @@ namespace _SIC
             SICDbEntities context = new SICDbEntities();
             String Email = lblEmailUserLogonText.Text;
             User user = context.Users.First(u => u.Email == Email);
-            //var m = MessageBox.Show("Are you sure?", "Delete", MessageBoxButtons.YesNo);
+            
             if (user.ADM == "YES")
             {
                 Form ManagerUser = new ManagerUsers();
@@ -127,6 +123,61 @@ namespace _SIC
             lblTimeActual.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
-               
+        private void customersReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SICDbEntities context = new SICDbEntities();
+            String Email = lblEmailUserLogonText.Text;
+            User user = context.Users.First(u => u.Email == Email);
+            
+            if (user.ADM == "YES")
+            {
+                ReportCustomers newRC = new ReportCustomers();
+                newRC.Show();
+            }
+            else
+            {
+                MessageBox.Show("You are not an Adminstrator!", "Warning", MessageBoxButtons.OK);
+            }
+
+          
+        }
+
+        private void ordersReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SICDbEntities context = new SICDbEntities();
+            String Email = lblEmailUserLogonText.Text;
+            User user = context.Users.First(u => u.Email == Email);
+            
+            if (user.ADM == "YES")
+            {
+                ReportOrders newRO = new ReportOrders();
+                newRO.Show();
+            }
+            else
+            {
+                MessageBox.Show("You are not an Adminstrator!", "Warning", MessageBoxButtons.OK);
+            }
+
+            
+        }
+
+        private void usersReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SICDbEntities context = new SICDbEntities();
+            String Email = lblEmailUserLogonText.Text;
+            User user = context.Users.First(u => u.Email == Email);
+          
+            if (user.ADM == "YES")
+            {
+                ReportUsers newRU = new ReportUsers();
+                newRU.Show();
+            }
+            else
+            {
+                MessageBox.Show("You are not an Adminstrator!", "Warning", MessageBoxButtons.OK);
+            }
+
+            
+        }
     }
 }

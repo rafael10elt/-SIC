@@ -39,6 +39,10 @@
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordersReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customersReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usersReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
@@ -48,9 +52,9 @@
             this.lbl2 = new System.Windows.Forms.Label();
             this.linklblLogout = new System.Windows.Forms.LinkLabel();
             this.grbUserInfo = new System.Windows.Forms.GroupBox();
+            this.lblTime = new System.Windows.Forms.Label();
             this.lblTimeActual = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblTime = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.grbUserInfo.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +65,7 @@
             this.ordersToolStripMenuItem,
             this.reportsToolStripMenuItem,
             this.usersToolStripMenuItem,
+            this.reportsToolStripMenuItem1,
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -136,6 +141,37 @@
             this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.manageUsersToolStripMenuItem.Text = "Manage Users";
             this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
+            // 
+            // reportsToolStripMenuItem1
+            // 
+            this.reportsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customersReportToolStripMenuItem,
+            this.ordersReportToolStripMenuItem,
+            this.usersReportToolStripMenuItem});
+            this.reportsToolStripMenuItem1.Name = "reportsToolStripMenuItem1";
+            this.reportsToolStripMenuItem1.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem1.Text = "Reports";
+            // 
+            // ordersReportToolStripMenuItem
+            // 
+            this.ordersReportToolStripMenuItem.Name = "ordersReportToolStripMenuItem";
+            this.ordersReportToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.ordersReportToolStripMenuItem.Text = "Orders Report";
+            this.ordersReportToolStripMenuItem.Click += new System.EventHandler(this.ordersReportToolStripMenuItem_Click);
+            // 
+            // customersReportToolStripMenuItem
+            // 
+            this.customersReportToolStripMenuItem.Name = "customersReportToolStripMenuItem";
+            this.customersReportToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.customersReportToolStripMenuItem.Text = "Customers Report";
+            this.customersReportToolStripMenuItem.Click += new System.EventHandler(this.customersReportToolStripMenuItem_Click);
+            // 
+            // usersReportToolStripMenuItem
+            // 
+            this.usersReportToolStripMenuItem.Name = "usersReportToolStripMenuItem";
+            this.usersReportToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.usersReportToolStripMenuItem.Text = "Users Report";
+            this.usersReportToolStripMenuItem.Click += new System.EventHandler(this.usersReportToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -229,6 +265,15 @@
             this.grbUserInfo.TabStop = false;
             this.grbUserInfo.Text = "User Info";
             // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(8, 35);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(38, 13);
+            this.lblTime.TabIndex = 11;
+            this.lblTime.Text = "Time:";
+            // 
             // lblTimeActual
             // 
             this.lblTimeActual.AutoSize = true;
@@ -246,15 +291,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tag = "";
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(8, 35);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(38, 13);
-            this.lblTime.TabIndex = 11;
-            this.lblTime.Text = "Time:";
             // 
             // Main
             // 
@@ -308,5 +344,9 @@
         private System.Windows.Forms.Label lblTimeActual;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ordersReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customersReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usersReportToolStripMenuItem;
     }
 }

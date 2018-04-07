@@ -82,6 +82,10 @@
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.ordersTableAdapter = new _SIC.SICDbDataSet1TableAdapters.OrdersTableAdapter();
             this.ordersTableAdapter1 = new _SIC.SICDbDataSet6TableAdapters.OrdersTableAdapter();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.grbOrdersList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdersList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).BeginInit();
@@ -251,7 +255,7 @@
             "18",
             "19",
             "20"});
-            this.cmbShelf.Location = new System.Drawing.Point(330, 149);
+            this.cmbShelf.Location = new System.Drawing.Point(330, 179);
             this.cmbShelf.Name = "cmbShelf";
             this.cmbShelf.Size = new System.Drawing.Size(48, 23);
             this.cmbShelf.TabIndex = 44;
@@ -269,7 +273,7 @@
             "High Value",
             "Personal",
             "Others  "});
-            this.cmbProductType.Location = new System.Drawing.Point(126, 153);
+            this.cmbProductType.Location = new System.Drawing.Point(126, 183);
             this.cmbProductType.Name = "cmbProductType";
             this.cmbProductType.Size = new System.Drawing.Size(149, 23);
             this.cmbProductType.TabIndex = 42;
@@ -278,7 +282,7 @@
             // 
             this.lblProductType.AutoSize = true;
             this.lblProductType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductType.Location = new System.Drawing.Point(15, 154);
+            this.lblProductType.Location = new System.Drawing.Point(15, 184);
             this.lblProductType.Name = "lblProductType";
             this.lblProductType.Size = new System.Drawing.Size(101, 16);
             this.lblProductType.TabIndex = 41;
@@ -304,7 +308,7 @@
             "N",
             "O",
             "P"});
-            this.cmbAisle.Location = new System.Drawing.Point(369, 123);
+            this.cmbAisle.Location = new System.Drawing.Point(369, 153);
             this.cmbAisle.Name = "cmbAisle";
             this.cmbAisle.Size = new System.Drawing.Size(59, 23);
             this.cmbAisle.TabIndex = 40;
@@ -313,7 +317,7 @@
             // 
             this.lblAisle.AutoSize = true;
             this.lblAisle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAisle.Location = new System.Drawing.Point(314, 123);
+            this.lblAisle.Location = new System.Drawing.Point(314, 153);
             this.lblAisle.Name = "lblAisle";
             this.lblAisle.Size = new System.Drawing.Size(43, 16);
             this.lblAisle.TabIndex = 39;
@@ -333,7 +337,7 @@
             "08",
             "09",
             "10"});
-            this.cmbRoom.Location = new System.Drawing.Point(246, 123);
+            this.cmbRoom.Location = new System.Drawing.Point(246, 153);
             this.cmbRoom.Name = "cmbRoom";
             this.cmbRoom.Size = new System.Drawing.Size(59, 23);
             this.cmbRoom.TabIndex = 38;
@@ -352,7 +356,7 @@
             "08",
             "09",
             "10"});
-            this.cmbWarehouse.Location = new System.Drawing.Point(126, 122);
+            this.cmbWarehouse.Location = new System.Drawing.Point(126, 152);
             this.cmbWarehouse.Name = "cmbWarehouse";
             this.cmbWarehouse.Size = new System.Drawing.Size(59, 23);
             this.cmbWarehouse.TabIndex = 37;
@@ -361,7 +365,7 @@
             // 
             this.lblWarehouse.AutoSize = true;
             this.lblWarehouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWarehouse.Location = new System.Drawing.Point(15, 123);
+            this.lblWarehouse.Location = new System.Drawing.Point(15, 153);
             this.lblWarehouse.Name = "lblWarehouse";
             this.lblWarehouse.Size = new System.Drawing.Size(87, 16);
             this.lblWarehouse.TabIndex = 35;
@@ -369,7 +373,7 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(454, 149);
+            this.txtQuantity.Location = new System.Drawing.Point(454, 179);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(34, 21);
             this.txtQuantity.TabIndex = 34;
@@ -378,7 +382,7 @@
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(384, 153);
+            this.lblQuantity.Location = new System.Drawing.Point(384, 183);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(64, 16);
             this.lblQuantity.TabIndex = 33;
@@ -387,7 +391,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(401, 209);
+            this.btnClose.Location = new System.Drawing.Point(401, 239);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(64, 30);
             this.btnClose.TabIndex = 25;
@@ -397,6 +401,10 @@
             // 
             // grbOrderRelease
             // 
+            this.grbOrderRelease.Controls.Add(this.btnReset);
+            this.grbOrderRelease.Controls.Add(this.btnSearch);
+            this.grbOrderRelease.Controls.Add(this.txtSearch);
+            this.grbOrderRelease.Controls.Add(this.lblSearch);
             this.grbOrderRelease.Controls.Add(this.cmbCurrency);
             this.grbOrderRelease.Controls.Add(this.txtOrderId);
             this.grbOrderRelease.Controls.Add(this.lblOrderId);
@@ -431,7 +439,7 @@
             this.grbOrderRelease.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbOrderRelease.Location = new System.Drawing.Point(12, 255);
             this.grbOrderRelease.Name = "grbOrderRelease";
-            this.grbOrderRelease.Size = new System.Drawing.Size(733, 265);
+            this.grbOrderRelease.Size = new System.Drawing.Size(733, 283);
             this.grbOrderRelease.TabIndex = 31;
             this.grbOrderRelease.TabStop = false;
             this.grbOrderRelease.Text = "Order Release";
@@ -443,14 +451,14 @@
             "CAD$",
             "US$",
             "R$"});
-            this.cmbCurrency.Location = new System.Drawing.Point(312, 88);
+            this.cmbCurrency.Location = new System.Drawing.Point(312, 118);
             this.cmbCurrency.Name = "cmbCurrency";
             this.cmbCurrency.Size = new System.Drawing.Size(66, 23);
             this.cmbCurrency.TabIndex = 52;
             // 
             // txtOrderId
             // 
-            this.txtOrderId.Location = new System.Drawing.Point(549, 30);
+            this.txtOrderId.Location = new System.Drawing.Point(87, 31);
             this.txtOrderId.Name = "txtOrderId";
             this.txtOrderId.ReadOnly = true;
             this.txtOrderId.Size = new System.Drawing.Size(59, 21);
@@ -461,7 +469,7 @@
             // 
             this.lblOrderId.AutoSize = true;
             this.lblOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderId.Location = new System.Drawing.Point(477, 32);
+            this.lblOrderId.Location = new System.Drawing.Point(15, 33);
             this.lblOrderId.Name = "lblOrderId";
             this.lblOrderId.Size = new System.Drawing.Size(66, 16);
             this.lblOrderId.TabIndex = 50;
@@ -470,7 +478,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(228, 209);
+            this.btnDelete.Location = new System.Drawing.Point(228, 239);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(64, 30);
             this.btnDelete.TabIndex = 33;
@@ -481,7 +489,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(316, 209);
+            this.btnClear.Location = new System.Drawing.Point(316, 239);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(64, 30);
             this.btnClear.TabIndex = 49;
@@ -492,7 +500,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(126, 209);
+            this.btnUpdate.Location = new System.Drawing.Point(126, 239);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(82, 30);
             this.btnUpdate.TabIndex = 32;
@@ -502,7 +510,7 @@
             // 
             // txtCustomerName
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(317, 30);
+            this.txtCustomerName.Location = new System.Drawing.Point(317, 60);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.ReadOnly = true;
             this.txtCustomerName.Size = new System.Drawing.Size(154, 21);
@@ -513,7 +521,7 @@
             // 
             this.lblCustomerName.AutoSize = true;
             this.lblCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerName.Location = new System.Drawing.Point(196, 33);
+            this.lblCustomerName.Location = new System.Drawing.Point(196, 63);
             this.lblCustomerName.Name = "lblCustomerName";
             this.lblCustomerName.Size = new System.Drawing.Size(118, 16);
             this.lblCustomerName.TabIndex = 47;
@@ -521,7 +529,7 @@
             // 
             // txtCustomerId
             // 
-            this.txtCustomerId.Location = new System.Drawing.Point(126, 29);
+            this.txtCustomerId.Location = new System.Drawing.Point(126, 59);
             this.txtCustomerId.Name = "txtCustomerId";
             this.txtCustomerId.ReadOnly = true;
             this.txtCustomerId.Size = new System.Drawing.Size(59, 21);
@@ -531,7 +539,7 @@
             // 
             this.lblCustomerId.AutoSize = true;
             this.lblCustomerId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerId.Location = new System.Drawing.Point(15, 33);
+            this.lblCustomerId.Location = new System.Drawing.Point(15, 63);
             this.lblCustomerId.Name = "lblCustomerId";
             this.lblCustomerId.Size = new System.Drawing.Size(92, 16);
             this.lblCustomerId.TabIndex = 45;
@@ -541,7 +549,7 @@
             // 
             this.lblShelf.AutoSize = true;
             this.lblShelf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShelf.Location = new System.Drawing.Point(281, 154);
+            this.lblShelf.Location = new System.Drawing.Point(281, 184);
             this.lblShelf.Name = "lblShelf";
             this.lblShelf.Size = new System.Drawing.Size(43, 16);
             this.lblShelf.TabIndex = 43;
@@ -551,7 +559,7 @@
             // 
             this.lblRoom.AutoSize = true;
             this.lblRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoom.Location = new System.Drawing.Point(191, 123);
+            this.lblRoom.Location = new System.Drawing.Point(191, 153);
             this.lblRoom.Name = "lblRoom";
             this.lblRoom.Size = new System.Drawing.Size(49, 16);
             this.lblRoom.TabIndex = 36;
@@ -559,7 +567,7 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(399, 87);
+            this.txtPrice.Location = new System.Drawing.Point(399, 117);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(72, 21);
             this.txtPrice.TabIndex = 32;
@@ -568,7 +576,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(262, 91);
+            this.lblPrice.Location = new System.Drawing.Point(262, 121);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(44, 16);
             this.lblPrice.TabIndex = 31;
@@ -576,14 +584,14 @@
             // 
             // txtBrand
             // 
-            this.txtBrand.Location = new System.Drawing.Point(317, 56);
+            this.txtBrand.Location = new System.Drawing.Point(317, 86);
             this.txtBrand.Name = "txtBrand";
             this.txtBrand.Size = new System.Drawing.Size(154, 21);
             this.txtBrand.TabIndex = 30;
             // 
             // txtSpecification
             // 
-            this.txtSpecification.Location = new System.Drawing.Point(126, 87);
+            this.txtSpecification.Location = new System.Drawing.Point(126, 117);
             this.txtSpecification.Name = "txtSpecification";
             this.txtSpecification.Size = new System.Drawing.Size(130, 21);
             this.txtSpecification.TabIndex = 29;
@@ -592,7 +600,7 @@
             // 
             this.lblProductName.AutoSize = true;
             this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductName.Location = new System.Drawing.Point(15, 60);
+            this.lblProductName.Location = new System.Drawing.Point(15, 90);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(106, 16);
             this.lblProductName.TabIndex = 26;
@@ -602,7 +610,7 @@
             // 
             this.lblSpecification.AutoSize = true;
             this.lblSpecification.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpecification.Location = new System.Drawing.Point(15, 91);
+            this.lblSpecification.Location = new System.Drawing.Point(15, 121);
             this.lblSpecification.Name = "lblSpecification";
             this.lblSpecification.Size = new System.Drawing.Size(98, 16);
             this.lblSpecification.TabIndex = 28;
@@ -612,7 +620,7 @@
             // 
             this.lblBrand.AutoSize = true;
             this.lblBrand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrand.Location = new System.Drawing.Point(262, 60);
+            this.lblBrand.Location = new System.Drawing.Point(262, 90);
             this.lblBrand.Name = "lblBrand";
             this.lblBrand.Size = new System.Drawing.Size(49, 16);
             this.lblBrand.TabIndex = 20;
@@ -620,7 +628,7 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(126, 56);
+            this.txtProductName.Location = new System.Drawing.Point(126, 86);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(130, 21);
             this.txtProductName.TabIndex = 27;
@@ -633,11 +641,50 @@
             // 
             this.ordersTableAdapter1.ClearBeforeFill = true;
             // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(196, 33);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(100, 16);
+            this.lblSearch.TabIndex = 53;
+            this.lblSearch.Text = "Search Order";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(317, 30);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 21);
+            this.txtSearch.TabIndex = 54;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::_SIC.Properties.Resources.ic_search;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Location = new System.Drawing.Point(423, 29);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(22, 22);
+            this.btnSearch.TabIndex = 57;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackgroundImage = global::_SIC.Properties.Resources.ic_update;
+            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReset.Location = new System.Drawing.Point(451, 29);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(22, 22);
+            this.btnReset.TabIndex = 58;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // ManagerOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 563);
+            this.ClientSize = new System.Drawing.Size(759, 546);
             this.Controls.Add(this.grbOrderRelease);
             this.Controls.Add(this.grbOrdersList);
             this.Name = "ManagerOrders";
@@ -712,5 +759,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn currencyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerCustomerIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnReset;
     }
 }

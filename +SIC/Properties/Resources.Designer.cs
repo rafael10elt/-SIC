@@ -73,6 +73,16 @@ namespace _SIC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_update {
+            get {
+                object obj = ResourceManager.GetObject("ic_update", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SIC_Screen {
             get {
                 object obj = ResourceManager.GetObject("SIC Screen", resourceCulture);
