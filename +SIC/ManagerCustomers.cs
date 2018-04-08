@@ -78,6 +78,7 @@ namespace _SIC
             txtPostalCode.Text = "";
             cmbProvince.Text = "";
             txtCustomerId.Text = "";
+            txtSearch.Text = "";
         }
 
         private void dgvCustomerList_CellContentClick_1(object sender, DataGridViewCellEventArgs e)

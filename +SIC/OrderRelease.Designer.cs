@@ -35,6 +35,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.lblBrand = new System.Windows.Forms.Label();
             this.grbOrderRelease = new System.Windows.Forms.GroupBox();
+            this.lblOtherType = new System.Windows.Forms.Label();
+            this.rtxtOther = new System.Windows.Forms.RichTextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.cmbCurrency = new System.Windows.Forms.ComboBox();
             this.btnClear = new System.Windows.Forms.Button();
@@ -91,7 +93,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(291, 229);
+            this.btnCancel.Location = new System.Drawing.Point(298, 316);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(64, 30);
             this.btnCancel.TabIndex = 25;
@@ -102,7 +104,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(124, 229);
+            this.btnSave.Location = new System.Drawing.Point(131, 316);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(66, 30);
             this.btnSave.TabIndex = 22;
@@ -122,6 +124,8 @@
             // 
             // grbOrderRelease
             // 
+            this.grbOrderRelease.Controls.Add(this.lblOtherType);
+            this.grbOrderRelease.Controls.Add(this.rtxtOther);
             this.grbOrderRelease.Controls.Add(this.btnSearch);
             this.grbOrderRelease.Controls.Add(this.cmbCurrency);
             this.grbOrderRelease.Controls.Add(this.btnClear);
@@ -155,10 +159,30 @@
             this.grbOrderRelease.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbOrderRelease.Location = new System.Drawing.Point(12, 12);
             this.grbOrderRelease.Name = "grbOrderRelease";
-            this.grbOrderRelease.Size = new System.Drawing.Size(489, 288);
+            this.grbOrderRelease.Size = new System.Drawing.Size(489, 359);
             this.grbOrderRelease.TabIndex = 30;
             this.grbOrderRelease.TabStop = false;
             this.grbOrderRelease.Text = "Order Release";
+            // 
+            // lblOtherType
+            // 
+            this.lblOtherType.AutoSize = true;
+            this.lblOtherType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOtherType.Location = new System.Drawing.Point(13, 214);
+            this.lblOtherType.Name = "lblOtherType";
+            this.lblOtherType.Size = new System.Drawing.Size(178, 16);
+            this.lblOtherType.TabIndex = 54;
+            this.lblOtherType.Text = "Description (Other Type)";
+            this.lblOtherType.Visible = false;
+            // 
+            // rtxtOther
+            // 
+            this.rtxtOther.Location = new System.Drawing.Point(16, 234);
+            this.rtxtOther.Name = "rtxtOther";
+            this.rtxtOther.Size = new System.Drawing.Size(332, 70);
+            this.rtxtOther.TabIndex = 53;
+            this.rtxtOther.Text = "";
+            this.rtxtOther.Visible = false;
             // 
             // btnSearch
             // 
@@ -186,7 +210,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(208, 229);
+            this.btnClear.Location = new System.Drawing.Point(215, 316);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(64, 30);
             this.btnClear.TabIndex = 49;
@@ -277,16 +301,18 @@
             "Food",
             "Construction",
             "Chemicals",
+            "Electronics",
             "Furniture",
             "Files",
             "Moving House",
             "High Value",
             "Personal",
-            "Others  "});
+            "Other"});
             this.cmbProductType.Location = new System.Drawing.Point(126, 185);
             this.cmbProductType.Name = "cmbProductType";
-            this.cmbProductType.Size = new System.Drawing.Size(179, 23);
+            this.cmbProductType.Size = new System.Drawing.Size(188, 23);
             this.cmbProductType.TabIndex = 42;
+            this.cmbProductType.SelectedIndexChanged += new System.EventHandler(this.cmbProductType_SelectedIndexChanged);
             // 
             // lblProductType
             // 
@@ -444,7 +470,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(514, 312);
+            this.ClientSize = new System.Drawing.Size(514, 383);
             this.Controls.Add(this.grbOrderRelease);
             this.Name = "OrderRelease";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -487,5 +513,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ComboBox cmbCurrency;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.RichTextBox rtxtOther;
+        private System.Windows.Forms.Label lblOtherType;
     }
 }

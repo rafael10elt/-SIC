@@ -54,8 +54,8 @@
             reportDataSource1.Name = "DataSetCustomer";
             reportDataSource1.Value = this.CustomersBindingSource;
             this.rpwCustomer.LocalReport.DataSources.Add(reportDataSource1);
-            this.rpwCustomer.LocalReport.ReportEmbeddedResource = "_SIC.ReportCustomer.rdlc";
-            this.rpwCustomer.LocalReport.ReportPath = "C:\\Users\\Rafa\\source\\repos\\WindowsForms\\project1\\CarReport.rdlc";
+            this.rpwCustomer.LocalReport.ReportEmbeddedResource = "";
+            this.rpwCustomer.LocalReport.ReportPath = "C:\\Users\\Rafa\\source\\repos\\+SIC\\+SIC\\ReportCustomerTable.rdlc";
             this.rpwCustomer.Location = new System.Drawing.Point(0, 0);
             this.rpwCustomer.Name = "rpwCustomer";
             this.rpwCustomer.ServerReport.BearerToken = null;
@@ -73,8 +73,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 450);
             this.Controls.Add(this.rpwCustomer);
+            this.MaximizeBox = false;
             this.Name = "ReportCustomers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportCustomers";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ReportCustomers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CustomersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SICDbDataSet2)).EndInit();

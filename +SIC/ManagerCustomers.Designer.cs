@@ -57,6 +57,8 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.grbRegisterCustomer = new System.Windows.Forms.GroupBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearchCustomer = new System.Windows.Forms.Label();
             this.txtBIN = new System.Windows.Forms.MaskedTextBox();
@@ -68,8 +70,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.customersTableAdapter = new _SIC.SICDbDataSet2TableAdapters.CustomersTableAdapter();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.grbCustomerList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
@@ -354,6 +354,28 @@
             this.grbRegisterCustomer.TabStop = false;
             this.grbRegisterCustomer.Text = "Register Customer";
             // 
+            // btnReset
+            // 
+            this.btnReset.BackgroundImage = global::_SIC.Properties.Resources.ic_update;
+            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReset.Location = new System.Drawing.Point(456, 33);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(22, 22);
+            this.btnReset.TabIndex = 57;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::_SIC.Properties.Resources.ic_search;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Location = new System.Drawing.Point(426, 33);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(22, 22);
+            this.btnSearch.TabIndex = 56;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(318, 34);
@@ -455,28 +477,6 @@
             // 
             this.customersTableAdapter.ClearBeforeFill = true;
             // 
-            // btnReset
-            // 
-            this.btnReset.BackgroundImage = global::_SIC.Properties.Resources.ic_update;
-            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReset.Location = new System.Drawing.Point(456, 33);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(22, 22);
-            this.btnReset.TabIndex = 57;
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = global::_SIC.Properties.Resources.ic_search;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Location = new System.Drawing.Point(426, 33);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(22, 22);
-            this.btnSearch.TabIndex = 56;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // ManagerCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,6 +484,7 @@
             this.ClientSize = new System.Drawing.Size(753, 525);
             this.Controls.Add(this.grbRegisterCustomer);
             this.Controls.Add(this.grbCustomerList);
+            this.MaximizeBox = false;
             this.Name = "ManagerCustomers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerCustomers";

@@ -88,6 +88,7 @@ namespace _SIC
             rdbNO.Checked = true;
             rdbYES.Checked = false;
             lblWrongPassword.Visible = false;
+            txtSearch.Text = "";
         }
 
         private void dgvUsersList_CellContentClick_1(object sender, DataGridViewCellEventArgs e)

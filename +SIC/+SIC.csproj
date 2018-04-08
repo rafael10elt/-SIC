@@ -243,18 +243,18 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportCustomer.rdlc" />
     <EmbeddedResource Include="ReportCustomers.resx">
       <DependentUpon>ReportCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportOrders.rdlc" />
+    <EmbeddedResource Include="ReportCustomerTable.rdlc" />
     <EmbeddedResource Include="ReportOrders.resx">
       <DependentUpon>ReportOrders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportUsers.rdlc" />
+    <EmbeddedResource Include="ReportOrdersTable.rdlc" />
     <EmbeddedResource Include="ReportUsers.resx">
       <DependentUpon>ReportUsers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportUserTable.rdlc" />
     <EmbeddedResource Include="SearchCustomer.resx">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
     </EmbeddedResource>

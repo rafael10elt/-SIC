@@ -21,7 +21,7 @@ namespace _SIC
           
         public void Main_Load(object sender, EventArgs e)
         {
-            
+           // Login.ActiveForm.Close();
         }
 
         public void addNewOrderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,13 +97,14 @@ namespace _SIC
         {
             var m = MessageBox.Show("Do you really want to Logout?", "Confirm Action", MessageBoxButtons.YesNo);
             if (m.ToString() == "Yes")
-            {
-                Form.ActiveForm.Close();
-
+            {              
+                
+                Form.ActiveForm.Close();               
+                
             }
             else
             {
-                //readOrders();
+                
             }
             
         }
@@ -178,6 +179,15 @@ namespace _SIC
             }
 
             
+        }
+
+        private void lblEmailUserLogonText_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

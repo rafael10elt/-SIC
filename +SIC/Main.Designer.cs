@@ -40,8 +40,8 @@
             this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordersReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordersReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -152,19 +152,19 @@
             this.reportsToolStripMenuItem1.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem1.Text = "Reports";
             // 
-            // ordersReportToolStripMenuItem
-            // 
-            this.ordersReportToolStripMenuItem.Name = "ordersReportToolStripMenuItem";
-            this.ordersReportToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.ordersReportToolStripMenuItem.Text = "Orders Report";
-            this.ordersReportToolStripMenuItem.Click += new System.EventHandler(this.ordersReportToolStripMenuItem_Click);
-            // 
             // customersReportToolStripMenuItem
             // 
             this.customersReportToolStripMenuItem.Name = "customersReportToolStripMenuItem";
             this.customersReportToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.customersReportToolStripMenuItem.Text = "Customers Report";
             this.customersReportToolStripMenuItem.Click += new System.EventHandler(this.customersReportToolStripMenuItem_Click);
+            // 
+            // ordersReportToolStripMenuItem
+            // 
+            this.ordersReportToolStripMenuItem.Name = "ordersReportToolStripMenuItem";
+            this.ordersReportToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.ordersReportToolStripMenuItem.Text = "Orders Report";
+            this.ordersReportToolStripMenuItem.Click += new System.EventHandler(this.ordersReportToolStripMenuItem_Click);
             // 
             // usersReportToolStripMenuItem
             // 
@@ -200,18 +200,19 @@
             this.lblEmailUserLogonText.BackColor = System.Drawing.Color.Transparent;
             this.lblEmailUserLogonText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmailUserLogonText.ForeColor = System.Drawing.Color.Green;
-            this.lblEmailUserLogonText.Location = new System.Drawing.Point(53, 16);
+            this.lblEmailUserLogonText.Location = new System.Drawing.Point(53, 18);
             this.lblEmailUserLogonText.Name = "lblEmailUserLogonText";
             this.lblEmailUserLogonText.Size = new System.Drawing.Size(78, 15);
             this.lblEmailUserLogonText.TabIndex = 5;
             this.lblEmailUserLogonText.Text = "User Email";
+            this.lblEmailUserLogonText.Click += new System.EventHandler(this.lblEmailUserLogonText_Click);
             // 
             // lblEmailUserLogon
             // 
             this.lblEmailUserLogon.AutoSize = true;
             this.lblEmailUserLogon.BackColor = System.Drawing.Color.Transparent;
             this.lblEmailUserLogon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailUserLogon.Location = new System.Drawing.Point(6, 16);
+            this.lblEmailUserLogon.Location = new System.Drawing.Point(6, 18);
             this.lblEmailUserLogon.Name = "lblEmailUserLogon";
             this.lblEmailUserLogon.Size = new System.Drawing.Size(48, 15);
             this.lblEmailUserLogon.TabIndex = 4;
@@ -242,7 +243,7 @@
             this.linklblLogout.BackColor = System.Drawing.Color.Transparent;
             this.linklblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linklblLogout.LinkColor = System.Drawing.Color.Red;
-            this.linklblLogout.Location = new System.Drawing.Point(88, 60);
+            this.linklblLogout.Location = new System.Drawing.Point(88, 71);
             this.linklblLogout.Name = "linklblLogout";
             this.linklblLogout.Size = new System.Drawing.Size(46, 13);
             this.linklblLogout.TabIndex = 8;
@@ -268,7 +269,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(8, 35);
+            this.lblTime.Location = new System.Drawing.Point(6, 37);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(38, 13);
             this.lblTime.TabIndex = 11;
@@ -278,7 +279,7 @@
             // 
             this.lblTimeActual.AutoSize = true;
             this.lblTimeActual.ForeColor = System.Drawing.Color.Blue;
-            this.lblTimeActual.Location = new System.Drawing.Point(54, 35);
+            this.lblTimeActual.Location = new System.Drawing.Point(54, 37);
             this.lblTimeActual.Name = "lblTimeActual";
             this.lblTimeActual.Size = new System.Drawing.Size(74, 13);
             this.lblTimeActual.TabIndex = 10;

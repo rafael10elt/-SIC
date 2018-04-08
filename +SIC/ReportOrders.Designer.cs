@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.OrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SICDbDataSet6 = new _SIC.SICDbDataSet6();
-            this.rpwCustomer = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rpwOrders = new Microsoft.Reporting.WinForms.ReportViewer();
             this.OrdersTableAdapter = new _SIC.SICDbDataSet6TableAdapters.OrdersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SICDbDataSet6)).BeginInit();
@@ -48,19 +48,19 @@
             this.SICDbDataSet6.DataSetName = "SICDbDataSet6";
             this.SICDbDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // rpwCustomer
+            // rpwOrders
             // 
-            this.rpwCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetOrders";
-            reportDataSource1.Value = this.OrdersBindingSource;
-            this.rpwCustomer.LocalReport.DataSources.Add(reportDataSource1);
-            this.rpwCustomer.LocalReport.ReportEmbeddedResource = "_SIC.ReportOrders.rdlc";
-            this.rpwCustomer.LocalReport.ReportPath = "C:\\Users\\Rafa\\source\\repos\\+SIC\\+SIC\\ReportOrders.Designer.cs";
-            this.rpwCustomer.Location = new System.Drawing.Point(0, 0);
-            this.rpwCustomer.Name = "rpwCustomer";
-            this.rpwCustomer.ServerReport.BearerToken = null;
-            this.rpwCustomer.Size = new System.Drawing.Size(732, 487);
-            this.rpwCustomer.TabIndex = 2;
+            this.rpwOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource2.Name = "DataSetOrders";
+            reportDataSource2.Value = this.OrdersBindingSource;
+            this.rpwOrders.LocalReport.DataSources.Add(reportDataSource2);
+            this.rpwOrders.LocalReport.ReportEmbeddedResource = "";
+            this.rpwOrders.LocalReport.ReportPath = "C:\\Users\\Rafa\\source\\repos\\+SIC\\+SIC\\ReportOrdersTable.rdlc";
+            this.rpwOrders.Location = new System.Drawing.Point(0, 0);
+            this.rpwOrders.Name = "rpwOrders";
+            this.rpwOrders.ServerReport.BearerToken = null;
+            this.rpwOrders.Size = new System.Drawing.Size(732, 487);
+            this.rpwOrders.TabIndex = 2;
             // 
             // OrdersTableAdapter
             // 
@@ -71,9 +71,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 487);
-            this.Controls.Add(this.rpwCustomer);
+            this.Controls.Add(this.rpwOrders);
+            this.MaximizeBox = false;
             this.Name = "ReportOrders";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportOrders";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ReportOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OrdersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SICDbDataSet6)).EndInit();
@@ -83,7 +86,7 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rpwCustomer;
+        private Microsoft.Reporting.WinForms.ReportViewer rpwOrders;
         private System.Windows.Forms.BindingSource OrdersBindingSource;
         private SICDbDataSet6 SICDbDataSet6;
         private SICDbDataSet6TableAdapters.OrdersTableAdapter OrdersTableAdapter;

@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rpwUsers = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.SICDbDataSet = new _SIC.SICDbDataSet();
             this.UsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SICDbDataSet = new _SIC.SICDbDataSet();
+            this.rpwUsers = new Microsoft.Reporting.WinForms.ReportViewer();
             this.UsersTableAdapter = new _SIC.SICDbDataSetTableAdapters.UsersTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.SICDbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SICDbDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // UsersBindingSource
+            // 
+            this.UsersBindingSource.DataMember = "Users";
+            this.UsersBindingSource.DataSource = this.SICDbDataSet;
+            // 
+            // SICDbDataSet
+            // 
+            this.SICDbDataSet.DataSetName = "SICDbDataSet";
+            this.SICDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rpwUsers
             // 
@@ -44,24 +54,14 @@
             reportDataSource1.Name = "DataSetUsers";
             reportDataSource1.Value = this.UsersBindingSource;
             this.rpwUsers.LocalReport.DataSources.Add(reportDataSource1);
-            this.rpwUsers.LocalReport.ReportEmbeddedResource = "_SIC.ReportUsers.rdlc";
-            this.rpwUsers.LocalReport.ReportPath = "C:\\Users\\Rafa\\source\\repos\\WindowsForms\\project1\\CarReport.rdlc";
+            this.rpwUsers.LocalReport.ReportEmbeddedResource = "";
+            this.rpwUsers.LocalReport.ReportPath = "C:\\Users\\Rafa\\source\\repos\\+SIC\\+SIC\\ReportUserTable.rdlc";
             this.rpwUsers.Location = new System.Drawing.Point(0, 0);
             this.rpwUsers.Name = "rpwUsers";
             this.rpwUsers.ServerReport.BearerToken = null;
             this.rpwUsers.ServerReport.ReportPath = "C:\\Users\\Rafa\\source\\repos\\+SIC\\+SIC\\ReportUsers.rdlc";
             this.rpwUsers.Size = new System.Drawing.Size(736, 471);
             this.rpwUsers.TabIndex = 1;
-            // 
-            // SICDbDataSet
-            // 
-            this.SICDbDataSet.DataSetName = "SICDbDataSet";
-            this.SICDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // UsersBindingSource
-            // 
-            this.UsersBindingSource.DataMember = "Users";
-            this.UsersBindingSource.DataSource = this.SICDbDataSet;
             // 
             // UsersTableAdapter
             // 
@@ -73,11 +73,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 471);
             this.Controls.Add(this.rpwUsers);
+            this.MaximizeBox = false;
             this.Name = "ReportUsers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportUsers";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ReportUsers_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.SICDbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SICDbDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

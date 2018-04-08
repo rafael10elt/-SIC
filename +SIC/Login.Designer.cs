@@ -119,7 +119,6 @@
             this.ClientSize = new System.Drawing.Size(215, 231);
             this.Controls.Add(this.grbLogin);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

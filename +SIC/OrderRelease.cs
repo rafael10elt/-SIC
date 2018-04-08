@@ -28,7 +28,7 @@ namespace _SIC
 
         private void OrderRelease_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -120,10 +120,6 @@ namespace _SIC
             Form NewSearchCustomer = new SearchCustomer();
             NewSearchCustomer.Show();
 
-            //string x1 = "", x2 = "";
-            //Form d = new OrderRelease(x1, x2);
-            //d.Close();
-
         }
         private void FindCustomerSearch(int CustomerId)
         {
@@ -132,6 +128,25 @@ namespace _SIC
 
             txtCustomerName.Text = cust.CompanyName;
             txtCustomerId.Text = cust.CustomerId.ToString();
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbProductType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ( cmbProductType.Text == "Other")
+            {
+                rtxtOther.Visible = true;
+                lblOtherType.Visible = true;
+            }
+            else
+            {
+                rtxtOther.Visible = false;
+                lblOtherType.Visible = false;
+            }
         }
     }
 

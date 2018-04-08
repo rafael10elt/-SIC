@@ -25,12 +25,12 @@ namespace _SIC
 
             SICDbEntities Ord = new SICDbEntities();
             IEnumerable<Order> list = from o in Ord.Orders select o;
-            ReportOrders.LocalReport.ReportEmbeddedResource = "ReportOrders.rdlc";
+            rpwOrders.LocalReport.ReportEmbeddedResource = "ReportOrders.rdlc";
             Microsoft.Reporting.WinForms.ReportDataSource rds = new Microsoft.Reporting.WinForms.ReportDataSource("DataSetOrders", list);
             rds.Name = "DataSetOrders";
             rds.Value = list;
-            ReportOrders.LocalReport.DataSources.Add(rds);
-            ReportOrders.RefreshReport();
+            rpwOrders.LocalReport.DataSources.Add(rds);
+            rpwOrders.RefreshReport();
 
             
 

@@ -68,17 +68,8 @@ namespace _SIC
             string CustomerName = txtCompanyName.Text;
             OrderRelease WindowOR = new OrderRelease(CustomerId, CustomerName);
             Form.ActiveForm.Close();                       
-            WindowOR.Show();
+            WindowOR.Show();           
             
-            //Form NewSearchCustomer = new SearchCustomer();
-            //NewSearchCustomer.Close();
-
-
-
-
-
-
-
         }
 
     }

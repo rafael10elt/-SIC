@@ -13,7 +13,7 @@ namespace _SIC
 {
     public partial class Login : Form
     {
-       // Form NewMain = new Main();
+       
         public Login()
         {
             InitializeComponent();
@@ -31,6 +31,7 @@ namespace _SIC
 
         public void btnLogin_Click_1(object sender, EventArgs e)
         {
+            
             using (var db = new SICDbEntities())
             {
                 var EmailResult =
@@ -53,23 +54,30 @@ namespace _SIC
                 }
                 else
                 {
+                     if (Application.OpenForms["Main"] == null)
+                        {
+                            string email = txtEmail.Text;
 
-                    string email = txtEmail.Text;
-                    Main f = new Main(email);
-                    f.Show();
-                    txtEmail.Text = "";
-                    txtPassword.Text = "";                 
-
+                            Main NewMain = new Main(email);
+                            NewMain.Show();
+                            //txtEmail.Text = "";
+                            txtPassword.Text = "";
+                        }
+                    else { 
+                    
+                        MessageBox.Show("You must click on Logout to allow opening as another User!", "Warning", MessageBoxButtons.OK);
+                    }                
+                    
                 }
             }
         }
-
+        
         private void btnLogout_Click(object sender, EventArgs e)
         {
             var m = MessageBox.Show("Do you really want to close?", "Confirm Action", MessageBoxButtons.YesNo);
             if (m.ToString() == "Yes")
             {
-                txtEmail.Text = "";
+                //txtEmail.Text = "";
                 txtPassword.Text = "";
 
                 Environment.Exit(0);

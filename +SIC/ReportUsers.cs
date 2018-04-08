@@ -24,12 +24,12 @@ namespace _SIC
 
             SICDbEntities User = new SICDbEntities();
             IEnumerable<User> list = from u in User.Users select u;
-            ReportUsers.LocalReport.ReportEmbeddedResource = "ReportUsers.rdlc";
+            rpwUsers.LocalReport.ReportEmbeddedResource = "ReportUsersTable.rdlc";
             Microsoft.Reporting.WinForms.ReportDataSource rds = new Microsoft.Reporting.WinForms.ReportDataSource("DataSetUsers", list);
             rds.Name = "DataSetUsers";
             rds.Value = list;
-            ReportUsers.LocalReport.DataSources.Add(rds);
-            ReportUsers.RefreshReport();
+            rpwUsers.LocalReport.DataSources.Add(rds);
+            rpwUsers.RefreshReport();
                         
 
         }
